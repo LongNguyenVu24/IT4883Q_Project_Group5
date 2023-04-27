@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+/* CSS Slider */
+#side-bar {
+    height: 1005px;
+    width: 369px;
+    background-color: #FAFAFA;
+}
+
+#side-bar li a {
+    color: #6D6363;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+}
