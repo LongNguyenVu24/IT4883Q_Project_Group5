@@ -5,19 +5,37 @@
 }
 
 body {
+    position: relative;
     background-color: #F0F2F6;
 }
 
 #nav {
-
+    width: 100%;
+    height: 145px;
 }
+
+#nav-left {
+    display: inline-block;
+    padding: 48.5px 0px 0px 104px;
+}
+
+#button-set {
+    display: flex;
+    float: right;
+    padding: 42px 130px 0px 0px;
+    gap: 13px;
+}
+
 
 #nav-left li {
     display: inline-block;
+    height: 48px;
 }
 
 #nav-left li div {
     padding: 14.5px 24px 14.5px 56px;
+    color: #279574;
+    font-size: 20px;
 }
 
 #nav-left li a {
@@ -32,7 +50,113 @@ body {
     padding-left: 12px;
 }
 
-#left-corner {
+#login {
+    width: 137px;
+    height: 61px;
+    background-color: #D9E1F2;
+    width: 137px;
+    height: 61px;
+}
+
+#start-for-free {
+    width: 241px;
+    height: 61px;
+    background-color: #279574;
+    width: 241px;
+    height: 61px;
+}
+
+#login, #start-for-free {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+#login a {
+    text-decoration: none;
+    color: #132039;
+    font-size: 24px;
+
+}
+
+#start-for-free a {
+    text-decoration: none;
+    color: #ECF0F9;
+    font-size: 24px;
+    
+}
+
+#login a, #start-for-free a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    letter-spacing: 0.015em;
+    
+}
+
+/* CSS content-layout */
+#content-layout {
+    /* position: absolute; */
+    width: 1710px;
+    height: 935px;
+    display: flex;
+    align-items: center;
+    left: 92px;
+    padding: 0px 0px 0px 31px;
+}
+
+#content-layout .left {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.03em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 173px 0px 61px 123px;
+    gap: 84px;
+    width: 640px;
+    height: 495px;
+}
+
+#content-layout h1 {
+    font-size: 48px;
+    color: #132039;
+}
+
+#content-layout .right .screenshot-desktop {
+    width: 828px;
+    height: 359px;
+    box-shadow: 0px 0px 15px 5px rgba(102, 137, 204, 0.3);
+    background: rgba(217, 225, 242, 0.2);
+    border-radius: 15px 0px 0px 15px;
+    position: absolute;
+    right: -56px;
+    bottom: 246.51px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#content-layout .right .screenshot-desktop .text-desktop {
+    width: 272.97px;
+    height: 61.02px;
+    font-family: 'Montserrat', sans-serif;  
+    font-style: normal;  
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    color: #279574;
+}
+
+#content-layout .right .freddy {
+    position: absolute;
+    left: 1675.65px;
+    top: 391.51px;
+}
+
+/* CSS bg-left */
+#bg-left {
     position: absolute;
     width: 351px;
     height: 453px;
