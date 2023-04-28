@@ -29,3 +29,14 @@
 #side-bar li:first-child{
     padding-top: 73px;
 }
+
+#side-bar li:last-child {
+    position: absolute;
+    bottom: 0px;
+}
+
+#side-bar li .completed::after {
+    display: block;
+    position: absolute;
+    border-bottom: 2px solid #6D6363 ;
+}
