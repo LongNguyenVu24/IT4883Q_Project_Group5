@@ -4,53 +4,77 @@
     box-sizing: border-box;
 }
 
-#main {
-
+#icon {
+    font-size: 40px;
 }
 
-#header{
+#nav{
     position: relative;
     width: 100%;
-    height: 70px;
+    height: 75px;
     left: 0px;
     top: 0px;
     background-color:#279574;
+    display: flex;
 }
 
-#nav {
-    
-}
-
-#header .fa-house {
+#nav .fa-house {
     position: absolute;
-    font-size: 44px;
     left: 43px;
     top: 0;
     color: #fff;
     line-height: 75px;
 }
 
-#header .fa-circle-user {
+#search-box {
     position: absolute;
-    font-size:57px;
+    line-height: 75px;
+    left: 116px;
+    height: 75px;
+}
+
+#search-text {
+    position: absolute;
+    height: 48px;
+    width: 257px;
+    border-radius: 15px;
+    border: none;
+    line-height: 75px;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+}
+
+#search-box .fa-magnifying-glass {
+    position: absolute;
+    color: #D9D9D9;
+    line-height: 75px;
+    left: 20px;
+    font-size: 20px;
+}
+
+#nav .fa-circle-user {
+    position: absolute;
     right: 47px;
-    top: 9px;
     color: #fff;
     padding: 0px 0px 0px 47px;
+    line-height: 75px;
+    float: right;
 }
 
-#header .fa-bell {
+#nav .fa-bell {
     position: absolute;
     line-height: 75px;
-    font-size: 52px;
     color: #fff;
     right: 164px;
+    float: right;
 }
 
-#header .fa-circle-question {
+#nav .fa-circle-question {
     position: absolute;
     line-height: 75px;
-    font-size: 52px;
     color: #fff;
     right: 273px;
+    float: right;
+
 }

@@ -6,8 +6,11 @@
 
 /* CSS Slider */
 #side-bar {
-    height: 1005px;
+    position: absolute;
     width: 369px;
+    height: 1005px;
+    left: 0px;
+    top: 75px;
     background-color: #FAFAFA;
 }
 
@@ -16,4 +19,13 @@
     text-decoration: none;
     font-size: 20px;
     font-family: 'Roboto', sans-serif;
+}
+
+#side-bar li {
+    list-style-type: none;
+    padding: 20.5px 0px 20.5px 113px;
+}
+
+#side-bar li:first-child{
+    padding-top: 73px;
 }
