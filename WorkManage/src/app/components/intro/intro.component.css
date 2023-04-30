@@ -53,9 +53,9 @@ body {
 #login {
     width: 137px;
     height: 61px;
-    background-color: #D9E1F2;
     width: 137px;
     height: 61px;
+    background-color: rgba(217, 225, 242,0.8);
 }
 
 #start-for-free {
@@ -162,4 +162,13 @@ body {
     height: 453px;
     left: 0px;
     bottom: 0px;
+}
+
+/* CSS hover */
+#start-for-free:hover {
+    background-color: #406BBF;
+}
+
+#login:hover {
+    background-color: #D9E1F2;
 }
