@@ -82,7 +82,7 @@ body {
 
 #start-for-free a {
     text-decoration: none;
-    color: #ECF0F9;
+    color: #ECF0F9; 
     font-size: 24px;
     
 }
@@ -97,7 +97,6 @@ body {
 
 /* CSS content-layout */
 #content-layout {
-    /* position: absolute; */
     width: 1710px;
     height: 935px;
     display: flex;
@@ -113,9 +112,14 @@ body {
     flex-direction: column;
     align-items: flex-start;
     padding: 173px 0px 61px 123px;
-    gap: 84px;
-    width: 640px;
+    gap: 32px;
+    width: 656px;
     height: 495px;
+}
+
+#content-layout .left p {
+    color: #264073;
+    font-size: 24px;
 }
 
 #content-layout h1 {
@@ -153,6 +157,7 @@ body {
     position: absolute;
     left: 1675.65px;
     top: 391.51px;
+    
 }
 
 /* CSS bg-left */
