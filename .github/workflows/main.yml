@@ -1,4 +1,4 @@
-name: Publish Docker image
+name: test workflows
 
 on:
   push:
@@ -6,6 +6,6 @@ on:
 
 jobs:
   say-hi:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
     - run: echo Hello mother father
