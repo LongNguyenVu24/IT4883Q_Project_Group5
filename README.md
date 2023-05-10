@@ -49,8 +49,7 @@ Visit the project homepage to view all features in detail.
 
 Bước 1: Tạo dockerfile với nội dung:
 
-<pre> 
-FROM node:19.3.0
+<pre>FROM node:19.3.0
 
 WORKDIR /app
 
@@ -62,16 +61,14 @@ COPY . .
 
 EXPOSE 3000
 
-CMD [ "npm", "start" ]
-</pre>
+CMD [ "npm", "start" ]</pre>
 
 Bước 2: Vào mục Actions của Repo hiện tại và chọn “Set up a workflow yourself”
 
 <img src="ReadmeAsset/pic1.png">
 
 Bước 3: Khi đó Github Actions sẽ tạo một thư mục .github/workflows trong repo hiện tại và yêu cầu người sử dụng tạo file main.yml với nội dung:
-<pre>
-name: Publish Docker image
+<pre>name: Publish Docker image
 
 on:
   push:
@@ -103,8 +100,7 @@ jobs:
           context: .
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}
-</pre>
+          labels: ${{ steps.meta.outputs.labels }}</pre>
 
 Chú ý: Có thể tạo các biến để lưu trữ tài khoản và mật khẩu docker trên Github thay vì nhập trực tiếp trên file main.yml để tránh bị lộ thông tin.
 
