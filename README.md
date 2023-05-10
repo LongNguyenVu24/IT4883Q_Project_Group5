@@ -104,6 +104,12 @@ jobs:
 
 Note that you should create variables on Github to store your Docker's username and password instead of putting it directly in the "main.yml" file to avoid information disclosure.
 
+Step 5: Now, whenever a member pushes code on Github, it will start running the workflow and execute all the jobs that you have set up in the "main.yml" file. You can check it in the "Actions" section.
+
+<img src="ReadmeAsset/pic2.png">
+
+<img src="ReadmeAsset/pic3.png">
+
 ## Development
 
 This repo is responsible for the Task-Manager FE, The API is in [BE Repo](https://github.com/LongNguyenVu24/IT4883Q_Project_Group5-BE.git).
