@@ -47,7 +47,7 @@ Visit the project homepage to view all features in detail.
 
 ## Build CI/CD Pipeline using Github Action | Build & push Docker Image
 
-Bước 1: Tạo dockerfile với nội dung:
+Step 1: Add dockerfile to the repo:
 
 <pre>FROM node:19.3.0
 
@@ -63,11 +63,11 @@ EXPOSE 3000
 
 CMD [ "npm", "start" ]</pre>
 
-Bước 2: Vào mục Actions của Repo hiện tại và chọn “Set up a workflow yourself”
+Step 2: Go to "Actions" of the current Repo and click on “Set up a workflow yourself”
 
 <img src="ReadmeAsset/pic1.png">
 
-Bước 3: Khi đó Github Actions sẽ tạo một thư mục .github/workflows trong repo hiện tại và yêu cầu người sử dụng tạo file main.yml với nội dung:
+Step 3: After that, Github Actions will add a folder .github/workflows in the current repo and ask you to create "main.yml" file:
 <pre>name: Publish Docker image
 
 on:
@@ -102,8 +102,7 @@ jobs:
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}</pre>
 
-Chú ý: Có thể tạo các biến để lưu trữ tài khoản và mật khẩu docker trên Github thay vì nhập trực tiếp trên file main.yml để tránh bị lộ thông tin.
-
+Note that you should create variables on Github to store your Docker's username and password instead of putting it directly in the "main.yml" file to avoid information disclosure.
 
 ## Development
 
