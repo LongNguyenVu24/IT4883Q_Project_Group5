@@ -29,6 +29,6 @@ jobs:
         with:
           context: .
           push: true
-          tag: dzunong2/workmanage:chuchu
+          tags: dzunong2/workmanage:chuchu
           # tags: ${{ steps.meta.outputs.tags }}
           # labels: ${{ steps.meta.outputs.labels }}
