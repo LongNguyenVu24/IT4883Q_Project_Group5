@@ -33,14 +33,15 @@ body {
 }
 
 #nav-left li div {
-    padding: 14.5px 24px 14.5px 56px;
-    color: #279574;
+    padding: 14.5px 24px 14.5px 24px;
+    color: #000000;
     font-size: 20px;
+    margin-left: 32px;
 }
 
 #nav-left li a {
     text-decoration: none;
-    color: #279574;
+    color: #000000;
     font-family: 'Inter', sans-serif;    
     font-style: normal;
     font-weight: 700;
@@ -50,12 +51,16 @@ body {
     padding-left: 12px;
 }
 
+#nav-left .home,
+#nav-left .home-text {
+    color: #279574;
+}
+
 #login {
     width: 137px;
     height: 61px;
     width: 137px;
     height: 61px;
-    background-color: rgba(217, 225, 242,0.8);
 }
 
 #start-for-free {
@@ -75,7 +80,7 @@ body {
 
 #login a {
     text-decoration: none;
-    color: #132039;
+    color: #279574;
     font-size: 24px;
 
 }
@@ -118,8 +123,9 @@ body {
 }
 
 #content-layout .left p {
-    color: #264073;
+    color: #132039;
     font-size: 24px;
+    line-height: 40px;
 }
 
 #content-layout h1 {
@@ -171,9 +177,18 @@ body {
 
 /* CSS hover */
 #start-for-free:hover {
-    background-color: #406BBF;
+    background-color: #1AB788;
 }
 
 #login:hover {
-    background-color: #D9E1F2;
+    background-color: rgba(217, 225, 242, 0.4);
+}
+
+#nav-left .about-us:hover,
+#nav-left .help-support:hover,
+#nav-left .about-us:hover a,
+#nav-left .help-support:hover a {
+    color: #1AB788;
+    background-color: rgba(217, 225, 242, 0.4);
+    border-radius: 10px;
 }
