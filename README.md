@@ -114,6 +114,8 @@ Note that you should create variables on Github to store your Docker's username 
 
 <img src="ReadmeAsset/pic3.png">
 
+<img src="ReadmeAsset/pic4.png">
+
 ## Development
 
 This repo is responsible for the Task-Manager FE, The API is in [BE Repo](https://github.com/LongNguyenVu24/IT4883Q_Project_Group5-BE.git).
