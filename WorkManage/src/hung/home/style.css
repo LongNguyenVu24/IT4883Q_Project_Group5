@@ -1,4 +1,4 @@
-/* CSS Nav */
+/* Start: Nav */
 * {
     padding: 0;
     margin: 0;
@@ -82,7 +82,10 @@
     margin-right: 35px;
 }
 
-/* CSS Side-bar */
+/* End: Nav */
+
+
+/* Start Side-bar */
 #side-bar {
     position: absolute;
     width: 369px;
@@ -141,3 +144,21 @@
     position: absolute;
     bottom: 10px;
 }
+
+/* hover */
+
+#side-bar li:hover {
+    background-color: rgba(217, 217, 217, 0.2);
+    border-radius: 10px;
+    border: 1px solid #A7A5A5;
+}
+
+/* End: Side-bar */
+
+
+/* Start: Notification */
+
+
+/* End: Notification */
+
+
