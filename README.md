@@ -48,7 +48,7 @@ Visit the project homepage to view all features in detail.
 
 ## Build CI/CD Pipeline using Github Action | Build & push Docker Image
 
-Step 1: Add dockerfile to the repo:
+- Step 1: Add dockerfile to the repo:
 
 <pre>FROM node:19.3.0
 
@@ -64,16 +64,18 @@ EXPOSE 3000
 
 CMD [ "npm", "start" ]</pre>
 
-Step 2: Go to "Actions" of the current Repo and click on “Set up a workflow yourself”
+- Step 2: Go to "Actions" of the current Repo and click on “Set up a workflow yourself”
 
 <img src="ReadmeAsset/pic1.png">
 
-Step 3: After that, Github Actions will add a folder .github/workflows in the current repo and ask you to create "main.yml" file:
+- Step 3: After that, Github Actions will add a folder .github/workflows in the current repo and ask you to create "main.yml" file:
 <pre>name: Publish Docker image
 
 on:
   push:
-    branches: ['main']
+    branches: 
+    - main
+    - 'dev/**'
 
 jobs:
   push_to_registry:
@@ -93,19 +95,20 @@ jobs:
         id: meta
         uses: docker/metadata-action@98669ae865ea3cffbcbaa878cf57c20bbf1c6c38
         with:
-          images: hung1608/testcicd
+          images: ${{ secrets.DOCKER_USERNAME }}/workmanage
       
       - name: Build and push Docker image
         uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
         with:
-          context: .
+          context: ./WorkManage
           push: true
           tags: ${{ steps.meta.outputs.tags }}
-          labels: ${{ steps.meta.outputs.labels }}</pre>
+          labels: ${{ steps.meta.outputs.labels }}
+</pre>
 
 Note that you should create variables on Github to store your Docker's username and password instead of putting it directly in the "main.yml" file to avoid information disclosure.
 
-Step 5: Now, whenever a member pushes code on Github, it will start running the workflow and execute all the jobs that you have set up in the "main.yml" file. You can check it in the "Actions" section.
+- Step 4: Now, whenever a member pushes code on Github, it will start running the workflow and execute all the jobs that you have set up in the "main.yml" file. You can check it in the "Actions" section.
 
 <img src="ReadmeAsset/pic2.png">
 
