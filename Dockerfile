@@ -1,6 +1,6 @@
 FROM node:19.3.0
 
-WORKDIR /app
+WORKDIR /app/Workmanage
 
 COPY package*.json ./
 
