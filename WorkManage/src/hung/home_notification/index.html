@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>home</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Cài thêm font cho side-bar -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    
+    <!-- Cài thêm font cho search-text -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+    
+    <!-- Nhúng fonawesome -->
+    <link rel="stylesheet" href="./fonts/fontawesome-free-6.4.0/css/all.min.css">
+
+    <!-- Cài thêm font cho Notifications -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div id="main">
+        <!-- Start: Nav -->
+        <div id="nav">
+            <div id="nav-left">
+                <div class="home-btn" id="icon">
+                    <i class="fa-solid fa-house"></i>
+                </div>
+
+                <form action="" id="search-box">
+                    <input type="text" id="search-text">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span class="search-text">Search</span>
+                </form> 
+
+
+            </div>
+                   
+
+            <div id="nav-right">
+                <div class="ques-btn" id="icon">
+                    <i class="fa-regular fa-circle-question"></i>
+                </div>
+
+                <div class="bell-btn" id="icon">
+                    <i class="fa-solid fa-bell"></i>
+                    <!-- Start: Notification -->
+                    <div id="noti">
+                        <div class="header">
+                            <h1 class="name">Notifications</h1>
+                            <a href="">Clear All</a>
+                        </div>
+    
+                        <div class="body">
+                            <div class="noti-item first">
+                                <div class="noti-text">
+                                    <p class="label">Haven't done <b>04</b> tasks, check it...</p>
+                                    <p class="date first-date">Yesterday - Distributed App</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+    
+                            <div class="noti-item">
+                                <div class="noti-text">
+                                    <p class="label">You have <b>04</b> tasks, check it out!!</p>
+                                    <p class="date">Today</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+    
+                            <div class="noti-item">
+                                <div class="noti-text">
+                                    <p class="label">You have <b>04</b> tasks, check it out!!</p>
+                                    <p class="date">Today</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+    
+                            <div class="noti-item">
+                                <div class="noti-text">
+                                    <p class="label">You have <b>04</b> tasks, check it out!!</p>
+                                    <p class="date">Today</p>
+                                </div>
+                                <i class="fa-solid fa-ellipsis"></i>
+                            </div>
+                        </div>
+    
+                    </div>
+                    <!-- End: Notification -->
+                    
+                </div>
+
+                <div class="avatar-btn" id="icon">
+                    <i class="fa-regular fa-circle-user"></i>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- End: Nav -->
+
+        <!-- Start: Side-bar -->
+        <div id="side-bar">
+            <ul class="feature">
+                <li>
+                    <i class="fa-regular fa-sun" id="icon-sidebar"></i>
+                    <a href="">Today</a>
+                </li>
+
+                <li>
+                    <i class="fa-regular fa-star" id="icon-sidebar"></i>
+                    <a href="">Important</a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-list-ul" id="icon-sidebar"></i>
+                    <a href="">In Process</a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-calendar-week" id="icon-sidebar"></i>
+                    <a href="">Upcoming</a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-list-check" id="icon-sidebar"></i>
+                    <a href="">Completed</a>
+                </li>
+                
+                <div id="line"></div>
+
+                <li class="distributed-app">
+                    <i class="fa-regular fa-circle"></i>
+                    <a href="">Distributed Apps</a>
+                </li>
+
+                <li>
+                    <i class="fa-solid fa-plus" id="icon-sidebar"></i>
+                    <a href="">Add List</a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
