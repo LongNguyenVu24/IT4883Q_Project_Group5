@@ -11,7 +11,6 @@
 
 /* Start Side-bar */
 #side-bar {
-    position: relative;
     width: 257px;
     height: 575px;
     left: 0px;
@@ -19,6 +18,7 @@
     background-color: #FAFAFA;
     justify-content: center;
     padding: 23px 28px;
+    float: left;
 }
 
 #side-bar h1 {
@@ -61,5 +61,52 @@
 
 /* End: Side-bar */
 
+/* Start: Content-layout */
+#content-layout {
+    overflow: hidden;
+    padding: 18.5px 0px 0px 42px;
+
+}
+
+#content-layout .header h1 {
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 16px;
+    margin-bottom: 21.5px;
+}
+
+#content-layout h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+#content-layout .photo {
+    padding: 15px 0px;
+}
+
+#content-layout .photo img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-right: 40px;
+}
+
+#content-layout .content-photo button {
+    width: 126px;
+    height: 37px;
+    border-radius: 10px;
+    border: 1px solid black ;
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 14px;
+}
+
+#content-layout .content-photo {
+    display: flex;
+    align-items: center;
+}
 
 
+/* End: Content-layout */
