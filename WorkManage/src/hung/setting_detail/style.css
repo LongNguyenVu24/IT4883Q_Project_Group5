@@ -132,6 +132,16 @@
     margin-bottom: 15px;
 }
 
+#content-layout .information .email-content {
+    display: flex;
+    gap: 20px;
+    height: 37px;
+}
+
+#content-layout .information .email-content button {
+    width: 126px;
+    height: 37px;
+}
 #content-layout .information button {
     width: 152px;
     height: 37px;

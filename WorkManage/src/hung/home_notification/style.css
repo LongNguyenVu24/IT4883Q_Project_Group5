@@ -166,7 +166,7 @@
     position: absolute;
     right: 81px;
     top: 75px;
-    display: none;
+    /* display: none; */
 }
 
 #noti .header {
@@ -174,6 +174,7 @@
     width: 100%;
     padding: 10.5px 42px;
     display: flex;
+    
 }
 
 #noti .name {
@@ -193,6 +194,8 @@
     font-weight: 500;
     color: #132039;
     margin-left: auto;
+    line-height: 100%;
+
 }
 
 #noti .body {
@@ -208,6 +211,7 @@
     margin-bottom: 16px;
     display: flex;
     align-items: center;
+    line-height: 100%;
 }
 
 #noti .fa-ellipsis {
@@ -215,12 +219,15 @@
     margin-left: auto;
     margin-right: 20px;
     font-size: 24px;
-    
+    line-height: 100%;
 }
 
 #noti .noti-text {
     height: 100%;
     margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #noti .noti-text .label {
@@ -229,6 +236,8 @@
     font-weight: 500;
     height: 22px;
     font-size: 17px;
+    line-height: 100%;
+
 }
 
 #noti .noti-text .date {
@@ -237,6 +246,7 @@
     font-weight: 400;
     height: 17px;
     font-size: 13px;
+    line-height: 100%;
 
 
 }
@@ -252,9 +262,9 @@
 
 /* CSS hover */
 
-#nav-right .bell-btn:hover #noti {
+/* #nav-right .bell-btn:hover #noti {
     display: block;
-}
+} */
 
 /* End: Notification */
 
