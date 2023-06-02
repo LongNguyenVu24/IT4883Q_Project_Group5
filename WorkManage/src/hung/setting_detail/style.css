@@ -75,6 +75,10 @@
     margin-bottom: 21.5px;
 }
 
+#content-layout hr {
+    margin-top: 20px;
+}
+
 #content-layout h2 {
     font-family: 'Montserrat', sans-serif;
     color: #132039;
@@ -93,11 +97,11 @@
     margin-right: 40px;
 }
 
-#content-layout .content-photo button {
+#content-layout button {
     width: 126px;
     height: 37px;
     border-radius: 10px;
-    border: 1px solid black ;
+    border: 1px solid transparent ;
     font-family: 'Montserrat', sans-serif;
     color: #132039;
     font-size: 14px;
@@ -108,5 +112,25 @@
     align-items: center;
 }
 
+#content-layout .information .text-field {
+    height: 37px;
+    width: 232px;
+    border: 1.5px solid #D9E1F2;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+}
 
+#content-layout .information .text-field {
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+#content-layout .information button {
+    width: 152px;
+    height: 37px;
+}
 /* End: Content-layout */
