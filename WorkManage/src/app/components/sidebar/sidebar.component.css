@@ -1,0 +1,11 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+mat-icon{
+    color: rgb(136, 125, 125);
+    
+}
+
