@@ -1,5 +1,5 @@
 mat-sidenav{
-    width: 369px;
+    width: 360px;
     height: 100%;
 }
 
@@ -11,3 +11,42 @@ mat-sidenav-content{
     }
 }
 
+mat-toolbar{
+    .mat-icon{
+        font-size: 44px;
+        height: 44px;
+        width:44px;
+        margin: 15px;
+        color: #e4e2e0;
+    }
+    justify-content: space-between;
+    background-color: #279574;
+    height: 70px;
+    .navleft{
+        display: flex;
+    }
+    .search-box{
+        background: #efefef;
+        width: 250px;
+        border-radius: 20px;
+        display: flex;
+        align-items: center;
+        padding: 0 15px;
+        margin-top: 15px;
+        height: 45px;
+    }
+    .search-box input{
+        width: 100%;
+        background: transparent;
+        padding: 10px;
+        outline: none;
+        border: 0;
+        font-family: sans-serif;
+        font-size: medium;
+    }
+    .search-box mat-icon{
+        position: relative;
+        margin-left: 0 ;
+        color: #d9d9d9;
+    }
+}

@@ -1,5 +1,20 @@
 <div class="navbar">
-    <app-navbar></app-navbar>
+    <mat-toolbar>
+        <div class="navleft">
+            <mat-icon (click)="sidebar.toggle()">home</mat-icon>
+            <div class="search-box">
+                <mat-icon>search</mat-icon>
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
+
+        <span class="spacer"></span>
+        <div class="navright">
+            <mat-icon>help_outline</mat-icon>
+            <mat-icon>notifications_none</mat-icon>
+            <mat-icon>perm_identity</mat-icon>
+        </div>
+    </mat-toolbar>
 </div>
 
 <mat-sidenav-container class="container">
@@ -9,7 +24,6 @@
 
     <mat-sidenav-content>
         <div class="content">
-            <mat-icon (click)="sidebar.toggle()">list</mat-icon>
             Main content here
         </div>
     </mat-sidenav-content>
