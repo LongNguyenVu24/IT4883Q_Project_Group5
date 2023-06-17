@@ -4,18 +4,10 @@ mat-sidenav{
 }
 
 mat-sidenav-content{
-    height: 100vh;
+    height: 90vh;
+    background-color: white;
     .main{
         margin-left: 10%;
     }
 }
 
-mat-toolbar{
-    .mat-icon{
-        margin-left: 15px;
-        color: rgb(255, 252, 247);
-    }
-    justify-content: space-between;
-    background-color: #279574;
-    height: 75px;
-}
