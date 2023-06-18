@@ -4,7 +4,9 @@
 *{
     font-family: sans-serif;
     background-color: #fafafa;
-    height: 80vh;
+    height: 1005px;
+    overflow: hidden;
+    position: relative;
 }
 
 mat-icon{
@@ -47,3 +49,9 @@ mat-icon{
     }
 }
 
+mat-divider{
+    margin-top: 29px;
+    margin-left: 53px;
+    width: 70%;
+    background: none;
+}

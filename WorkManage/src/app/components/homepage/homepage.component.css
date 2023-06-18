@@ -1,14 +1,22 @@
+
 mat-sidenav{
     width: 360px;
     height: 100%;
 }
 
 mat-sidenav-content{
-    height: 90vh;
+    height: 1005px;
     background-color: white;
+    display: flex;
     .main{
         margin-left: 10%;
     }
+}
+
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 900;
 }
 
 mat-toolbar{
@@ -20,7 +28,7 @@ mat-toolbar{
         color: #e4e2e0;
     }
     justify-content: space-between;
-    background-color: #279574;
+    background-color: var(--color-primary);
     height: 70px;
     .navleft{
         display: flex;
@@ -50,3 +58,4 @@ mat-toolbar{
         color: #d9d9d9;
     }
 }
+
