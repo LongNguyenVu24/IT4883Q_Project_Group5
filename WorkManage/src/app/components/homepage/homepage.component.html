@@ -1,5 +1,5 @@
-<div class="navbar">
-    <mat-toolbar>
+<div class="navbar navbar-expand-lg navbar-light bg-light" class=" ">
+    <mat-toolbar class="col-md-auto">
         <div class="navleft">
             <mat-icon (click)="sidebar.toggle()">home</mat-icon>
             <div class="search-box">
@@ -16,11 +16,11 @@
     </mat-toolbar>
 </div>
 
-<mat-sidenav-container class="container">
-    <mat-sidenav #sidebar mode="side" opened>
+<mat-sidenav-container >
+    <mat-sidenav #sidebar mode="side" opened class="col-md-4">
         <app-sidebar></app-sidebar>
     </mat-sidenav>
-    <mat-sidenav-content>
+    <mat-sidenav-content class="col-md-8">
         <div class="content">
             
             <router-outlet></router-outlet>

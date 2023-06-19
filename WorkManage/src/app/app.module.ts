@@ -11,6 +11,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDivider, MatDividerModule} from '@angular/material/divider';
 import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatInputModule} from '@angular/material/input';
+import {MatCardModule} from '@angular/material/card';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { TodayComponent } from './components/today/today.component';
 import { ImportantComponent } from './components/important/important.component';
@@ -39,7 +41,9 @@ import { ListComponent } from './components/list/list.component';
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
-    MatDividerModule
+    MatDividerModule,
+    MatCardModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]

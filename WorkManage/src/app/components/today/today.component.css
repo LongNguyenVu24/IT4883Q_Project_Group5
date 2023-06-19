@@ -1,0 +1,10 @@
+*{
+    width: 50vw;
+}
+mat-card-title{
+    display: flex;
+}
+.header-land{
+    display: flex;
+    position: relative;
+}
