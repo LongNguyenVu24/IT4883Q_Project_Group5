@@ -19,6 +19,7 @@ import { ImportantComponent } from './components/important/important.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { CompletedComponent } from './components/completed/completed.component';
 import { ListComponent } from './components/list/list.component';
+import { TaskComponent } from './components/task/task.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ListComponent } from './components/list/list.component';
     ImportantComponent,
     UpcomingComponent,
     CompletedComponent,
-    ListComponent
+    ListComponent,
+    TaskComponent
   ],
   imports: [
     BrowserModule,

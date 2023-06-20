@@ -1,10 +1,8 @@
 *{
-    width: 60vw;
+    width: 1094px;
 }
 
-mat-card-title{
-    display: inline-flex;
-}
+
 .header-land{
     display: flex;
     position: relative;
