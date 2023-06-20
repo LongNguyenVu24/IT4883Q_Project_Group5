@@ -23,7 +23,7 @@ mat-icon{
         display: flex;  
         margin-bottom: 21px;
         margin-left: 53px;
-        padding-top: 29px;
+        
     }
     .side-button mat-icon{
         background: none;
@@ -50,6 +50,7 @@ mat-icon{
 
 .sidebarfunc{
     padding-top: 55px;
+    
 }
 
 mat-divider{
@@ -59,4 +60,16 @@ mat-divider{
     background: none;
 }
 
+.list{
+    padding-top: 360px;
+    align-items: baseline;
+}
 
+
+
+.side-button fa-light fa-plus{
+    background: none;
+    font-size: 29px;
+    height: 29px;
+    width: 29px;
+}

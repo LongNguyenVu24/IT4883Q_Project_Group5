@@ -16,11 +16,11 @@
     </mat-toolbar>
 </div>
 
-<mat-sidenav-container >
-    <mat-sidenav #sidebar mode="side" opened class="col-md-4">
+<mat-sidenav-container class="my-container">
+    <mat-sidenav #sidebar mode="side" opened>
         <app-sidebar></app-sidebar>
     </mat-sidenav>
-    <mat-sidenav-content class="col-md-8">
+    <mat-sidenav-content>
         <div class="content">
             
             <router-outlet></router-outlet>
