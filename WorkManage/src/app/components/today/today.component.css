@@ -1,0 +1,16 @@
+*{
+    width: 60vw;
+}
+
+mat-card-title{
+    display: inline-flex;
+}
+.header-land{
+    display: flex;
+    position: relative;
+}
+
+mat-card{
+    margin-top: 17px;
+    width: 100%;
+}

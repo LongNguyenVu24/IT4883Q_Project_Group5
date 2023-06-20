@@ -1,3 +1,29 @@
+<div class="navbar navbar-expand-lg navbar-light bg-light" class=" ">
+    <mat-toolbar class="col-md-auto">
+        <div class="navleft">
+            <mat-icon (click)="sidebar.toggle()">home</mat-icon>
+            <div class="search-box">
+                <input type="text" placeholder="Search">
+            </div>
+        </div>
 
-<app-navbar></app-navbar>
-gay 
+        <span class="spacer"></span>
+        <div class="navright">
+            <mat-icon>help_outline</mat-icon>
+            <mat-icon>notifications_none</mat-icon>
+            <mat-icon>perm_identity</mat-icon>
+        </div>
+    </mat-toolbar>
+</div>
+
+<mat-sidenav-container class="my-container">
+    <mat-sidenav #sidebar mode="side" opened>
+        <app-sidebar></app-sidebar>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div class="content">
+            
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
