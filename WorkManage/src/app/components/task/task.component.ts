@@ -3,6 +3,7 @@ import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-task',
@@ -13,12 +14,12 @@ import { MatCardModule } from '@angular/material/card';
     MatCardModule,
     MatCheckboxModule,
     FormsModule, 
-    MatRadioModule],
+    MatRadioModule,
+    MatButtonModule,
+  ],
 })
 
 export class TaskComponent {
   checked = false;
-  indeterminate = false;
-  labelPosition: 'before' | 'after' = 'after';
-  disabled = false;
+  imchecked = false;
 }

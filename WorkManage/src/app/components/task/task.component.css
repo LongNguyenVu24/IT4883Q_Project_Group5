@@ -1,0 +1,45 @@
+
+  
+  .example-section {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    height: 60px;
+  }
+  
+  .example-margin {
+    margin: 0 10px;
+  }
+
+  .icon-checkbox {
+    display: none;
+  }
+  
+  .icon-container {
+    display: inline-block;
+    margin-left: 80%;
+    font-size: 29px;
+    cursor: pointer;
+    color: #ccc;
+    border-style: #ccc;
+  }
+  
+  .icon-checkbox:checked + .icon-container {
+    color: rgb(0, 0, 0);
+    animation: pop_42 0.5s ease-out;
+  }
+  
+  @keyframes pop_42 {
+    0% {
+      transform: scale(1);
+    }
+  
+    50% {
+      transform: scale(1.5);
+    }
+  
+    100% {
+      transform: scale(1);
+    }
+  }
+  

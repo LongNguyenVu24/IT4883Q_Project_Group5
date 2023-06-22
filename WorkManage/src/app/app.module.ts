@@ -33,7 +33,6 @@ import { TaskComponent } from './components/task/task.component';
     UpcomingComponent,
     CompletedComponent,
     ListComponent,
-    TaskComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +44,8 @@ import { TaskComponent } from './components/task/task.component';
     MatToolbarModule,
     MatDividerModule,
     MatCardModule,
-    MatInputModule
+    MatInputModule,
+    TaskComponent
   ],
   providers: [],
   bootstrap: [AppComponent]
