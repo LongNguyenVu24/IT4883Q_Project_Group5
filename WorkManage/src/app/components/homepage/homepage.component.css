@@ -16,10 +16,13 @@ mat-sidenav-content{
     justify-content: center;
 }
 
-.navbar navbar-expand-lg navbar-light bg-light {
+.navbar navbar-expand-lg navbar-light bg-light{
     position: sticky;
     top: 0;
-    z-index: 900;
+    z-index: 1000;
+    background-color: var(--color-primary);
+    height: 70px;
+    border-bottom: 1px solid #ccc;
   }
   
   .mat-toolbar {

@@ -20,7 +20,7 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { CompletedComponent } from './components/completed/completed.component';
 import { ListComponent } from './components/list/list.component';
 import { TaskComponent } from './components/task/task.component';
-
+import { GanttModule } from '@syncfusion/ej2-angular-gantt'
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +45,8 @@ import { TaskComponent } from './components/task/task.component';
     MatDividerModule,
     MatCardModule,
     MatInputModule,
-    TaskComponent
+    TaskComponent,
+    GanttModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
