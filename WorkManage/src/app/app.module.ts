@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { MatMenuModule } from '@angular/material/menu'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
@@ -20,7 +20,9 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { CompletedComponent } from './components/completed/completed.component';
 import { ListComponent } from './components/list/list.component';
 import { TaskComponent } from './components/task/task.component';
-import { GanttModule } from '@syncfusion/ej2-angular-gantt'
+import { GanttModule } from '@syncfusion/ej2-angular-gantt';
+import { UserComponent } from './components/user/user.component';
+import { NotiComponent } from './components/noti/noti.component'
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,8 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt'
     UpcomingComponent,
     CompletedComponent,
     ListComponent,
+    UserComponent,
+    NotiComponent,
   ],
   imports: [
     BrowserModule,
@@ -47,6 +51,7 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt'
     MatInputModule,
     TaskComponent,
     GanttModule,
+    MatMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

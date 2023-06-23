@@ -8,20 +8,37 @@
         </div>
 
         <span class="spacer"></span>
-        <div class="navright">
-            <mat-icon>help_outline</mat-icon>
-            <mat-icon>notifications_none</mat-icon>
-            <mat-icon>perm_identity</mat-icon>
+        <div class="nav_right">
+            <button class="mat-icon-button" style="background: none; border: none;">
+                <mat-icon routerLink="">help_outline</mat-icon>
+            </button>
+            <button class="mat-icon-button" routerLink="noti" style="background: none; border: none;">
+                <mat-icon routerLink="">notifications_none</mat-icon>
+            </button>
+            <button class="mat-icon-button" style="background: none; border: none;"
+            [matMenuTriggerFor]="hello"
+             >
+                <mat-icon >perm_identity</mat-icon>
+            </button>
+            <mat-menu #hello="matMenu">
+                <button mat-menu-item>fuch u bitch</button>
+                <button mat-menu-item>fuch u bitch 2</button>
+                <button mat-menu-item>fuch u bitch 3</button>
+            </mat-menu>
         </div>
+
+
+
+
     </mat-toolbar>
 </div>
 
 <mat-sidenav-container class="my-container" autosize>
-    <mat-sidenav #sidebar mode="side" opened>
+    <mat-sidenav #sidebar mode="side" opened position="start">
         <app-sidebar></app-sidebar>
     </mat-sidenav>
     <mat-sidenav-content>
-        <div class="content">  
+        <div class="content">
             <router-outlet></router-outlet>
         </div>
     </mat-sidenav-content>
