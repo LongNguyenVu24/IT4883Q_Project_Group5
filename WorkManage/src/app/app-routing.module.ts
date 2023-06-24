@@ -9,6 +9,7 @@ import { ImportantComponent } from './components/important/important.component';
 import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { CompletedComponent } from './components/completed/completed.component';
 import { UserComponent } from './components/user/user.component';
+import { LoginHungComponent } from './components/login-hung/login-hung.component';
 
 
 const routes: Routes = [
@@ -25,7 +26,9 @@ const routes: Routes = [
    ]
   },
   
-  {path:'login', component:LoginComponent}
+  {path:'login', component:LoginComponent},
+  {path:'login-hung', component:LoginHungComponent}
+
 
 ];
 

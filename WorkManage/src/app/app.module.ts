@@ -24,6 +24,7 @@ import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import { UserComponent } from './components/user/user.component';
 import { NotiComponent } from './components/noti/noti.component';
 import { MatBadgeModule } from '@angular/material/badge';
+import { LoginHungComponent } from './components/login-hung/login-hung.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { MatBadgeModule } from '@angular/material/badge';
     ListComponent,
     UserComponent,
     NotiComponent,
+    LoginHungComponent,
   ],
   imports: [
     BrowserModule,
