@@ -19,6 +19,11 @@ body {
     --color-light-gray: #efefef;
 }
 
+/* modify login with google button text component */
+.mat-mdc-button .mdc-button__label, .mat-mdc-unelevated-button .mdc-button__label, .mat-mdc-raised-button .mdc-button__label, .mat-mdc-outlined-button .mdc-button__label {
+    font-family: 'Inter', sans-serif;
+}
+
 /* modify login field component */
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
     background-color: transparent;
