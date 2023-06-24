@@ -22,7 +22,9 @@ import { ListComponent } from './components/list/list.component';
 import { TaskComponent } from './components/task/task.component';
 import { GanttModule } from '@syncfusion/ej2-angular-gantt';
 import { UserComponent } from './components/user/user.component';
-import { NotiComponent } from './components/noti/noti.component'
+import { NotiComponent } from './components/noti/noti.component';
+import { MatBadgeModule } from '@angular/material/badge';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -52,6 +54,7 @@ import { NotiComponent } from './components/noti/noti.component'
     TaskComponent,
     GanttModule,
     MatMenuModule,
+    MatBadgeModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

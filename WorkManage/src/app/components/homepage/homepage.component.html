@@ -1,9 +1,11 @@
-<div class="navbar navbar-expand-lg navbar-light bg-light" class=" ">
-    <mat-toolbar class="col-md-auto">
+<!-- <div class="navbar navbar-expand-lg navbar-light bg-light" class=" ">
+    
+</div> -->
+<mat-toolbar>
         <div class="navleft">
             <mat-icon (click)="sidebar.toggle()">home</mat-icon>
             <div class="search-box">
-                <input type="text" placeholder="Search">
+                <input matInput type="text" placeholder="Search">
             </div>
         </div>
 
@@ -12,12 +14,14 @@
             <button class="mat-icon-button" style="background: none; border: none;">
                 <mat-icon routerLink="">help_outline</mat-icon>
             </button>
-            <button class="mat-icon-button" routerLink="noti" style="background: none; border: none;">
-                <mat-icon routerLink="">notifications_none</mat-icon>
+            <button class="mat-icon-button" style="background: none; border: none;" 
+            [matMenuTriggerFor]="hello2">
+                <mat-icon matBadge="." matBadgeColor="warn" matBadgeOverlap="false"
+                >notifications_none</mat-icon>
             </button>
+
             <button class="mat-icon-button" style="background: none; border: none;"
-            [matMenuTriggerFor]="hello"
-             >
+            [matMenuTriggerFor]="hello">
                 <mat-icon >perm_identity</mat-icon>
             </button>
             <mat-menu #hello="matMenu">
@@ -25,14 +29,18 @@
                 <button mat-menu-item>fuch u bitch 2</button>
                 <button mat-menu-item>fuch u bitch 3</button>
             </mat-menu>
+
+            <mat-menu #hello2="matMenu">
+                <button mat-menu-item>fuch u bitch</button>
+                <button mat-menu-item>fuch u bitch</button>
+                <button mat-menu-item>fuch u bitch</button>
+            </mat-menu>
         </div>
 
 
 
 
     </mat-toolbar>
-</div>
-
 <mat-sidenav-container class="my-container" autosize>
     <mat-sidenav #sidebar mode="side" opened position="start">
         <app-sidebar></app-sidebar>
