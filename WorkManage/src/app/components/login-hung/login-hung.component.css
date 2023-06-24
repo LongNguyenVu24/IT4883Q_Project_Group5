@@ -135,6 +135,7 @@ body {
 }
 
 #right .forget {
+    width: 502px;
     color: rgba(0, 0, 0, 0.12);
     text-align: center;
     font-size: 20px;
@@ -149,4 +150,18 @@ body {
     color: #279574;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
+}
+
+/* hover */
+
+#right .login_btn:hover {
+    background-color: #1AB788;
+}
+
+#right .forget a:hover {
+    text-decoration: underline;
+}
+
+#left a:hover {
+    margin-right: 14px;
 }

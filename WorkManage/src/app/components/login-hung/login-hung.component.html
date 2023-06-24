@@ -20,13 +20,18 @@
             <input matInput>
           </mat-form-field>
 
-          <mat-form-field>
-            <mat-label>Password</mat-label>
-            <input matInput>
-          </mat-form-field>
+          <div class="example-container">
+            <mat-form-field>
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          
     </div>
     <button class="login_btn">Login</button>
     <div class="forget">
-        Forget your password? <a href="">Forget</a>
+        Forget your password ?&nbsp;<a href="">Forget</a>
     </div>
 </div>
