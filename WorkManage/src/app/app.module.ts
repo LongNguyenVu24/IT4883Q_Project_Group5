@@ -25,6 +25,7 @@ import { NotiComponent } from './components/noti/noti.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { LoginHungComponent } from './components/login-hung/login-hung.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     GanttModule,
     MatMenuModule,
     MatBadgeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
