@@ -4,7 +4,6 @@ import { MatMenuModule } from '@angular/material/menu'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomepageComponent } from './components/homepage/homepage.component';
-import { LoginComponent } from './components/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import {MatIconModule} from '@angular/material/icon';
@@ -30,8 +29,6 @@ import { LoginHungComponent } from './components/login-hung/login-hung.component
   declarations: [
     AppComponent,
     HomepageComponent,
-    LoginComponent,
-    LoginComponent,
     SidebarComponent,
     TodayComponent,
     ImportantComponent,
