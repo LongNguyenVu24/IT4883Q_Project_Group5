@@ -25,6 +25,7 @@ import { UserComponent } from './components/user/user.component';
 import { NotiComponent } from './components/noti/noti.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { LoginHungComponent } from './components/login-hung/login-hung.component';
+import { SignUpComponent } from './components/sign-up/sign-up.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +42,7 @@ import { LoginHungComponent } from './components/login-hung/login-hung.component
     UserComponent,
     NotiComponent,
     LoginHungComponent,
+    SignUpComponent,
   ],
   imports: [
     BrowserModule,
