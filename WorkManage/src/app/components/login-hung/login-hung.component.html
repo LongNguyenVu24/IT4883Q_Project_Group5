@@ -1,37 +1,40 @@
 <div id="left">
-    <h2>
-        Let us be a tiny little part of your life
-    </h2>
-    
-    <div class="bottom">
-        <a href="">Home</a>
-        <a href="">About Us</a>
-        <a href="">Help & Support</a>
-    </div>
+  <h2>
+    Let us be a tiny little part of your life
+  </h2>
+
+  <div class="bottom">
+    <a href="">Home</a>
+    <a href="">About Us</a>
+    <a href="">Help & Support</a>
+  </div>
 </div>
 
 <div id="right">
-    <h3>Welcome!!!</h3>
-    <button mat-button class="log_with_gg_btn"><img src="assets/image/Google logo.png" alt="">Login with Google</button>
-    <div class="or">- OR -</div>
-    <div class="text-field">
-        <mat-form-field>
-            <mat-label>Email Address</mat-label>
-            <input matInput>
-          </mat-form-field>
+  <h3>Welcome!!!</h3>
+  <button mat-button class="log_with_gg_btn">
+    Sign Up</button>
+  <div class="or">- OR -</div>
+  <div class="text-field">
+    <mat-form-field>
+      <mat-label>Email Address</mat-label>
+      <input matInput>
+    </mat-form-field>
 
-          <div class="example-container">
-            <mat-form-field>
-              <mat-label>Enter your password</mat-label>
-              <input matInput [type]="hide ? 'password' : 'text'">
-              <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-              </button>
-            </mat-form-field>
-          
+    <div class="example-container">
+      <mat-form-field>
+        <mat-label>Enter your password</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
     </div>
-    <button mat-button class="login_btn">Login</button>
+    <button mat-button class="login_btn">Sign in</button>
     <div class="forget">
-        Forget your password ?&nbsp;<a href="">Forget</a>
+      Forget your password ?&nbsp;<a href="">Forget</a>
     </div>
-</div>
+
+  </div>
