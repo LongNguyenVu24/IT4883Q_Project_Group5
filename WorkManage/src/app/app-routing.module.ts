@@ -2,7 +2,7 @@ import { NotiComponent } from './components/noti/noti.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomepageComponent } from './components/homepage/homepage.component';
-
+import { LoginComponent } from './components/login/login.component';
 import { ProcessComponent } from './components/process/process.component';
 import { TodayComponent } from './components/today/today.component';
 import { ImportantComponent } from './components/important/important.component';
@@ -28,7 +28,7 @@ const routes: Routes = [
    ]
   },
   
-  {path:'login', component:LoginComponent},
+
   {path:'login-hung', component:LoginHungComponent}
 
 
