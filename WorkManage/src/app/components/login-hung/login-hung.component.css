@@ -15,7 +15,7 @@ body {
 #left h2 {
     width: 408px;
     height: 177px;
-    color: #279574;
+    color: var(--color-primary);
     font-size: 48px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
@@ -71,10 +71,7 @@ body {
     background-color: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 
-    color: #181818;
-    font-size: 16px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
+
 }
 
 #right .log_with_gg_btn img {
@@ -116,6 +113,13 @@ body {
     
 }
 
+#right .log_with_gg_btn{
+    font-size: 24px;
+    font-family: 'Montserrat', sans-serif !important;
+    font-weight: 700;
+    letter-spacing: 0.36px;
+    color: rgba(26, 23, 23, 0.38);
+}
 
 #right .login_btn {
     display: flex;
@@ -127,12 +131,9 @@ body {
     gap: 10px;
     margin-top: 20px;
     margin-bottom: 10px;
-    
     border-radius: 10px;
     background-color: #279574;
     border: 0px solid white;
-
-
     color: #ECF0F9;
     font-size: 24px;
     font-family: 'Montserrat', sans-serif !important;
