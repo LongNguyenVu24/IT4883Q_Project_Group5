@@ -26,6 +26,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { LoginHungComponent } from './components/login-hung/login-hung.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -57,7 +58,8 @@ import { FormsModule } from '@angular/forms';
     GanttModule,
     MatMenuModule,
     MatBadgeModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
