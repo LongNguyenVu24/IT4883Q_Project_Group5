@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./today.component.css'],
 })
 export class TodayComponent {
-
+  
 }
 

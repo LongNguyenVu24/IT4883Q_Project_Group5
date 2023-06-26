@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>Create Task</h2>
+<mat-dialog-content class="mat-typography">
+    <div>
+
+        <label for="taskName">Task Name:</label>
+        <input type="text" id="taskName">
+
+        <label for="taskDescription">Task Description:</label>
+        <textarea id="taskDescription"></textarea>
+
+        <label for="startDate">Start Date:</label>
+        <input type="date" id="startDate">
+
+        <label for="endDate">End Date:</label>
+        <input type="date" id="endDate">
+
+        <label for="taskPriority">Task Priority:</label>
+        <input type="checkbox" id="taskPriority">
+
+        <label for="taskStatus">Task Status:</label>
+        <input type="checkbox" id="taskStatus">
+
+        <label for="repeat">Repeat:</label>
+        <input type="checkbox" id="repeat">
+
+    </div>
+
+    <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-button type="submit" cdkFocusInitial>Save Task</button>
+    </mat-dialog-actions>

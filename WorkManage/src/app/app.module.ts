@@ -1,3 +1,4 @@
+import { LandingviewComponent } from './components/landingview/landingview.component';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatMenuModule } from '@angular/material/menu'
@@ -28,6 +29,8 @@ import { SignUpComponent } from './components/login-hung/sign-up/sign-up.compone
 import { LoginComponent } from './components/login-hung/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { DialogModalContentComponent } from './components/dialog-modal-content/dialog-modal-content.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginHungComponent,
     SignUpComponent,
     LoginComponent,
+    DialogModalContentComponent,
+    LandingviewComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatMenuModule,
     MatBadgeModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]
