@@ -1,4 +1,4 @@
-<p>sign-up works!</p>
+
 
 <!-- <form (ngSubmit)="submitForm()">
     <label for="username">Username:</label>
@@ -19,7 +19,7 @@
     <input type="submit" value="Sign Up">
   </form> -->
 
-  <form (ngSubmit)="register()">
+  <!-- <form id="right"(ngSubmit)="register()">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" [(ngModel)]="username" required>
 
@@ -32,3 +32,36 @@
   
     <input type="submit" value="Sign Up">
   </form>
+  -->
+
+  <div id="right">
+    <h3>Welcome!!!</h3>
+    
+    <div class="text-field">
+        <mat-form-field>
+            <mat-label>FullName</mat-label>
+            <input matInput>
+          </mat-form-field>
+    
+          <div class="text-field">
+            <mat-form-field>
+                <mat-label>Email Address</mat-label>
+                <input matInput>
+              </mat-form-field>
+          <div class="example-container">
+            <mat-form-field>
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" 
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          
+    </div>
+    <button mat-button class="login_btn">Sign Up</button>
+    <div class="forget">
+        Already haved account?&nbsp;<a [routerLink]="['/login']">Sign in</a>
+    </div>
+  </div>
+</div>

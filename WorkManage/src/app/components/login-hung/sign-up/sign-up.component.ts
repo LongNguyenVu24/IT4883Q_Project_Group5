@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  hide = true;
   username: string = '';
   email: string = '';
   password: string = '';
