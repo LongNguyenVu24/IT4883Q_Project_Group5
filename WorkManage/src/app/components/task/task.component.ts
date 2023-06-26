@@ -27,45 +27,79 @@ export class TaskComponent {
   checked = false;
   imchecked = false;
 
-  taskName: string = '';
-  taskDescription: string = '';
-  startDate: string = '';
-  endDate: string = '';
-  taskPriority: boolean = false;
-  repeat: boolean = false;
+//   taskName: string = '';
+//   taskDescription: string = '';
+//   startDate: string = '';
+//   endDate: string = '';
+//   taskPriority: boolean = false;
+//   repeat: boolean = false;
 
-  constructor(private http: HttpClient, private taskService: TaskService) { }
+//   constructor(private http: HttpClient, private taskService: TaskService) { }
   
-// Save task
-saveTask(task: any): void {
-  this.taskService.saveTask(task).subscribe(
-    (response) => {
-      console.log('Task saved:', response);
+// // Save task
+// saveTask(task: any): void {
+//   this.taskService.saveTask(task).subscribe(
+//     (response) => {
+//       console.log('Task saved:', response);
 
-      // Display success message to the user
-      alert('Task saved successfully!');
-    },
-    (error) => {
-      console.error('Error saving task:', error);
-      // Display error message with specific error details
-      alert('Error saving task. Please try again.\n\nError Details: ' + error.message);
-    }
-  );
-}
-onSubmit() {
+//       // Display success message to the user
+//       alert('Task saved successfully!');
+//     },
+//     (error) => {
+//       console.error('Error saving task:', error);
+//       // Display error message with specific error details
+//       alert('Error saving task. Please try again.\n\nError Details: ' + error.message);
+//     }
+//   );
+// }
+// onSubmit() {
 
-   const task = {
-    taskName: this.taskName,
-    taskDescription: this.taskDescription,
-    startDate: this.startDate,
-    endDate: this.endDate,
-    taskPriority: this.taskPriority,
-    taskRepeat: this.repeat,
-  };
+//    const task = {
+//     taskName: this.taskName,
+//     taskDescription: this.taskDescription,
+//     startDate: this.startDate,
+//     endDate: this.endDate,
+//     taskPriority: this.taskPriority,
+//     taskRepeat: this.repeat,
+//   };
 
-  this.saveTask(task);
-} 
+//   this.saveTask(task);
+// } 
 
+taskName: string = ''; // Assign a default value or initialize in the constructor
+taskDescription: string = '';
+startDate: string = '';
+endDate: string = '';
+taskPriority: boolean = false;
+taskStatus: boolean = false;
+repeat: boolean = false;
+
+  constructor(private http: HttpClient) {}
+
+  saveTask() {
+    const taskSaveDTO = {
+      taskName: this.taskName,
+      taskDescription: this.taskDescription,
+      startDate: this.startDate,
+      endDate: this.endDate,
+      taskPriority: this.taskPriority,
+      taskStatus: this.taskStatus,
+      repeat: this.repeat
+    };
+
+    this.http.post<any>('http://localhost:8003/api/task/save', taskSaveDTO).subscribe(
+      (response) => {
+        // Handle successful response
+        console.log('Task saved successfully:', response);
+        alert('Task saved successfully!');
+      },
+      (error) => {
+        // Handle error
+        console.error('Error saving task:', error);
+        alert('Error saving task. Please try again.\n\nError Details: ' + error.message);
+      }
+    );
+  }
 
 // // Get all tasks
 // getAllTasks(): void {
