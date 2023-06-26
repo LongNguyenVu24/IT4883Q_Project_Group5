@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./login-hung.component.css']
 })
 export class LoginHungComponent {
-  hide = true;
+  
 }

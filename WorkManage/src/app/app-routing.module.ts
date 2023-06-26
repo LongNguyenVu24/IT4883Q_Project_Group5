@@ -9,9 +9,8 @@ import { UpcomingComponent } from './components/upcoming/upcoming.component';
 import { CompletedComponent } from './components/completed/completed.component';
 import { UserComponent } from './components/user/user.component';
 import { LoginHungComponent } from './components/login-hung/login-hung.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
-
-
+import { LoginComponent } from './components/login-hung/login/login.component';
+import { SignUpComponent } from './components/login-hung/sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -28,10 +27,13 @@ const routes: Routes = [
    ]
   },
   
-
-  {path:'login-hung', component:LoginHungComponent},
-
-  {path: 'signup', component:SignUpComponent},    
+  {path:'login', component:LoginHungComponent,
+  children:[
+    { path: '', redirectTo: 'loginc', pathMatch: 'full' },
+    {path:'loginc', component:LoginComponent},
+    {path:'signup', component:SignUpComponent},
+  ]  
+}
 
 ];
 

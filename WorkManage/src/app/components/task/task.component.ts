@@ -26,12 +26,14 @@ import {TaskService} from './task.service';
 export class TaskComponent {
   checked = false;
   imchecked = false;
+
   taskName: string = '';
   taskDescription: string = '';
   startDate: string = '';
   endDate: string = '';
   taskPriority: boolean = false;
   repeat: boolean = false;
+
   constructor(private http: HttpClient, private taskService: TaskService) { }
   
 // Save task
@@ -39,6 +41,7 @@ saveTask(task: any): void {
   this.taskService.saveTask(task).subscribe(
     (response) => {
       console.log('Task saved:', response);
+
       // Display success message to the user
       alert('Task saved successfully!');
     },
@@ -61,7 +64,8 @@ onSubmit() {
   };
 
   this.saveTask(task);
-}
+} 
+
 
 // // Get all tasks
 // getAllTasks(): void {
@@ -98,4 +102,5 @@ onSubmit() {
 //     }
 //   );
 // }
+
 }

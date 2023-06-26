@@ -24,7 +24,8 @@ import { UserComponent } from './components/user/user.component';
 import { NotiComponent } from './components/noti/noti.component';
 import { MatBadgeModule } from '@angular/material/badge';
 import { LoginHungComponent } from './components/login-hung/login-hung.component';
-import { SignUpComponent } from './components/sign-up/sign-up.component';
+import { SignUpComponent } from './components/login-hung/sign-up/sign-up.component';
+import { LoginComponent } from './components/login-hung/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -42,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     NotiComponent,
     LoginHungComponent,
     SignUpComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
