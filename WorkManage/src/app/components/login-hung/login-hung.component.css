@@ -5,7 +5,7 @@ body {
 #left {
     width: 880px;
     height: 100%;
-    background-image:url(../../../assets/image/vecteezy_deadline-time-management-business-concept-vector_19571629.jpg);
+    background-image: url(../../../assets/image/vecteezy_deadline-time-management-business-concept-vector_19571629.jpg);
     background-size: contain;
     background-repeat: no-repeat;
     float: left;
@@ -17,7 +17,7 @@ body {
     height: 177px;
     color: var(--color-primary);
     font-size: 48px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 700;
     position: absolute;
     top: 60px;
@@ -28,141 +28,21 @@ body {
     position: absolute;
     left: 175px;
     bottom: 75px;
-    
 }
 
 #left a {
     color: #000000;
     text-decoration: none;
     font-size: 14px;
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 500;
     margin-right: 24px;
-}
-
-#right {
-    height: 100%;
-    width: 640px;
-    float: right;
-    display: flex;
-    flex-direction: column;
-}
-
-#right h3 {
-    color: #374957;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif;
-    font-weight: 800;
-    letter-spacing: 4.32px;
-    margin-top: 150px;
-    margin-bottom: 60px;
-}
-
-#right .log_with_gg_btn {
-    display: flex;
-    width: 502px;
-    height: 52px;
-    /* padding: 10px 0px 10px 148px; */
-    /* align-items: center; */
-    gap: 16px;
-    
-    border-radius: 8px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    background-color: #FFF;
-    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-
-
-}
-
-#right .log_with_gg_btn img {
-    width: 26px;
-    margin-right: 15px;
-}
-
-#right .or {
-    width: 502px;
-    color: rgba(26, 23, 23, 0.38);
-    font-size: 24px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 800;
-    letter-spacing: 4.32px;
-    display: flex;
-    justify-content: center;
-    margin: 60px 0px;
-}
-
-#right .text-field {
-    display: flex;
-    flex-direction: column;
-}
-
-
-#right .text-field mat-form-field {
-    width: 502px;
-    margin-bottom: 10px;
-}
-
-
-#right .text-field mat-label {
-    font-family: 'Inter', sans-serif;
-    
-    
-}
-#right .text-field input {
-    font-family: 'Inter', sans-serif;
-    
-}
-
-#right .log_with_gg_btn{
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 700;
-    letter-spacing: 0.36px;
-    color: rgba(26, 23, 23, 0.38);
-}
-
-#right .login_btn {
-    display: flex;
-    width: 502px;
-    height: 48px;
-    padding: 16px 32px;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    background-color: #279574;
-    border: 0px solid white;
-    color: #ECF0F9;
-    font-size: 24px;
-    font-family: 'Montserrat', sans-serif !important;
-    font-weight: 700;
-    letter-spacing: 0.36px;
-}
-
-#right .forget {
-    width: 502px;
-    color: rgba(0, 0, 0, 0.12);
-    text-align: center;
-    font-size: 20px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
-    display: flex;
-    justify-content: center;
-}
-
-#right .forget a {
-    text-decoration: none;
-    color: #279574;
-    font-family: 'Inter', sans-serif;
-    font-weight: 500;
 }
 
 /* hover */
 
 #right .login_btn:hover {
-    background-color: #1AB788;
+    background-color: #1ab788;
 }
 
 #right .forget a:hover {

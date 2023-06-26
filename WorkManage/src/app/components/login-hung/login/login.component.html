@@ -1,1 +1,27 @@
-<p>login works!</p>
+<div id="right">
+    <h3>Welcome!!!</h3>
+    <button mat-button class="sign_up">Sign up</button>
+    <div class="or">- OR -</div>
+    <div class="text-field">
+        <mat-form-field>
+            <mat-label>Email Address</mat-label>
+            <input matInput>
+          </mat-form-field>
+
+          <div class="example-container">
+            <mat-form-field>
+              <mat-label>Enter your password</mat-label>
+              <input matInput [type]="hide ? 'password' : 'text'">
+              <button mat-icon-button matSuffix (click)="hide = !hide" 
+              [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+              </button>
+            </mat-form-field>
+          
+    </div>
+    <button mat-button class="login_btn">Sign in</button>
+    <div class="forget">
+        Forget your password ?&nbsp;<a href="">Forget</a>
+    </div>
+  </div>
+</div>

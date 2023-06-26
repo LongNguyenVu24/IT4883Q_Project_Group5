@@ -27,9 +27,10 @@ const routes: Routes = [
    ]
   },
   
-  {path:'login-hung', component:LoginHungComponent,
+  {path:'login', component:LoginHungComponent,
   children:[
-    {path:'login', component:LoginComponent},
+    { path: '', redirectTo: 'loginc', pathMatch: 'full' },
+    {path:'loginc', component:LoginComponent},
     {path:'signup', component:SignUpComponent},
   ]  
 }
