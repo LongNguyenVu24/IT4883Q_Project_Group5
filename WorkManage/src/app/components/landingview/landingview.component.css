@@ -1,0 +1,10 @@
+*{
+    width: 1094px;
+}
+
+
+.header-land{
+    width: 1094px;
+    display: flex;
+    position: relative;
+}
