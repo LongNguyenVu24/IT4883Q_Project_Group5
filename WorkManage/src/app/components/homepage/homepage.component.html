@@ -3,10 +3,10 @@
 </div> -->
 <mat-toolbar>
         <div class="navleft">
-    <div class="search-box">
-        <input matInput type="text" placeholder="Search" [(ngModel)]="searchQuery" (input)="searchTasks()">
-      </div>
-
+            <mat-icon (click)="sidebar.toggle()">home</mat-icon>
+            <div class="search-box">
+                <input matInput type="text" placeholder="Search">
+            </div>
         </div>
 
         <span class="spacer"></span>

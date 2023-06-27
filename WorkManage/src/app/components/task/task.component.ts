@@ -9,12 +9,8 @@ import { HttpClient } from '@angular/common/http';
 import {TaskService} from './task.service';
 import { DialogModalContentComponent } from '../dialog-modal-content/dialog-modal-content.component';
 import { CommonModule } from '@angular/common';
-<<<<<<< HEAD
-export interface Task {
-=======
 import { MatListModule } from '@angular/material/list';
-interface Task {
->>>>>>> dee70a9f8a2335182849b4e9fe14a7d34086064f
+export interface Task {
   taskName: string;
   taskDiscription: string;
   startDate: string;
