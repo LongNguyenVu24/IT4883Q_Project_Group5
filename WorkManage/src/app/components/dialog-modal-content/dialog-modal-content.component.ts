@@ -29,8 +29,12 @@ export class DialogModalContentComponent {
       repeat: this.repeat,
     };
 
+    
+
+
+
     this.http
-      .post<any>('http://localhost:8003/api/task/save', taskSaveDTO, {
+      .post('http://localhost:8003/api/task/save', taskSaveDTO, {
         responseType: 'json',
       })
       .subscribe(
@@ -52,4 +56,6 @@ export class DialogModalContentComponent {
         }
       );
   }
+
+
 }
