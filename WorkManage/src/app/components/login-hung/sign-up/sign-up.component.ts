@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , ChangeDetectorRef } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { MatDialog } from '@angular/material/dialog';
 @Component({
@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./sign-up.component.css']
 })
 export class SignUpComponent {
+  // title = 'Initial Title2';
   hide = true;
   username: string = '';
   email: string = '';
@@ -17,7 +18,7 @@ export class SignUpComponent {
   token:String='';
   exist:String='';
   noticeIfUserExist:String='';
-  constructor(private http: HttpClient) { } 
+  constructor(private http: HttpClient,private cdr: ChangeDetectorRef) { } 
 
   public async register() {
     
@@ -41,8 +42,9 @@ export class SignUpComponent {
       });
       console.log(this.token);  
       console.log(this.noticeIfUserExist);
-      alert(this.noticeIfUserExist)
-
+      alert(this.noticeIfUserExist);
+      // this.title= "he;ppopooo";
+      // this.cdr.detectChanges(); 
     } catch (error) {
       console.log(error);
     }
