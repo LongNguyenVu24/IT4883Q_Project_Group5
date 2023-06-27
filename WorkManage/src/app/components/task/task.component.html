@@ -63,3 +63,26 @@
       </mat-card>
     </li>
   </ul>
+
+  <ng-container *ngFor="let task of filteredTasks">
+    <mat-card class="result">
+      <mat-card-content>
+        <section class="task-details">
+          <mat-checkbox [(ngModel)]="task.taskPriority" color="primary">
+            {{ task.taskName }}
+          </mat-checkbox>
+          <input type="checkbox" id="my-icon-checkbox" class="icon-checkbox" [(ngModel)]="task.taskStatus">
+          <label for="my-icon-checkbox" class="icon-container">
+            <i class="fas fa-star"></i>
+          </label>
+        </section>
+        <section class="task-description">
+          <p><strong>Task Description:</strong> {{ task.taskDiscription }}</p>
+          <p><strong>Start Date:</strong> {{ task.startDate }}</p>
+          <p><strong>End Date:</strong> {{ task.endDate }}</p>
+          <p><strong>Repeat:</strong> {{ task.repeat }}</p>
+        </section>
+      </mat-card-content>
+    </mat-card>
+  </ng-container>
+ 
