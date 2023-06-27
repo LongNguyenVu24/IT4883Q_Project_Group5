@@ -1,8 +1,7 @@
 .settings-dialog {
     display: flex;
     flex-direction: row;
-    height: 400px;
-    width: 800px;
+    
   }
   
   .sidebar {
@@ -54,7 +53,16 @@
     justify-content: flex-end;
     margin-top: 20px;
   }
+  mat-dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-end;
+    margin-top: 20px;
+    
+  right: 0;
   
+  }
+
   mat-dialog-actions button {
     margin-left: 10px;
   }

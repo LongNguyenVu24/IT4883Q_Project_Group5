@@ -14,7 +14,7 @@ export class LandingviewComponent {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogModalContentComponent, {
-      width: '520px'
+      width: 'auto',height: 'auto'
     });
 }
 }

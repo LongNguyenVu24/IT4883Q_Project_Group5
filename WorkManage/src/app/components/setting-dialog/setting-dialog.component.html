@@ -1,10 +1,11 @@
 <mat-dialog-content class="settings-dialog">
     <div class="sidebar">
       <ul>
-        <li [class.active]="activeTab === 'backup'" (click)="activeTab = 'backup'">Back-Up</li>
+        <li [class.active]="activeTab === 'account'" (click)="activeTab = 'account'">Account</li>
+
         <li [class.active]="activeTab === 'preference'" (click)="activeTab = 'preference'">Preference</li>
         <li [class.active]="activeTab === 'notifications'" (click)="activeTab = 'notifications'">Notifications</li>
-        <li [class.active]="activeTab === 'account'" (click)="activeTab = 'account'">Account</li>
+        <li [class.active]="activeTab === 'backup'" (click)="activeTab = 'backup'">Back-Up</li>      
         <li [class.active]="activeTab === 'aboutus'" (click)="activeTab = 'aboutus'">About us</li>
         <li [class.active]="activeTab === 'help'" (click)="activeTab = 'help'">Help & Support</li>
       </ul>
