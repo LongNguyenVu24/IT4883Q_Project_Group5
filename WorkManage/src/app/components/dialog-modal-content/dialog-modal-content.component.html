@@ -1,31 +1,31 @@
 <h2 mat-dialog-title>Create Task</h2>
 <mat-dialog-content class="mat-typography">
-    <div>
+    <div >
 
         <label for="taskName">Task Name:</label>
-        <input type="text" id="taskName">
+        <input type="text" id="taskName" [(ngModel)]="taskName" required>
 
         <label for="taskDescription">Task Description:</label>
-        <textarea id="taskDescription"></textarea>
+        <textarea id="taskDescription" [(ngModel)]="taskDiscription" required></textarea>
 
         <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate">
+        <input type="date" id="startDate" [(ngModel)]="startDate" required>
 
         <label for="endDate">End Date:</label>
-        <input type="date" id="endDate">
+        <input type="date" id="endDate" [(ngModel)]="endDate" required>
 
         <label for="taskPriority">Task Priority:</label>
-        <input type="checkbox" id="taskPriority">
+        <input type="checkbox" id="taskPriority" [(ngModel)]="taskPriority">
 
         <label for="taskStatus">Task Status:</label>
-        <input type="checkbox" id="taskStatus">
+        <input type="checkbox" id="taskStatus" [(ngModel)]="taskStatus">
 
         <label for="repeat">Repeat:</label>
-        <input type="checkbox" id="repeat">
+        <input type="checkbox" id="repeat"  [(ngModel)]="repeat">
 
     </div>
 
     <mat-dialog-actions>
         <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button type="submit" cdkFocusInitial>Save Task</button>
+        <button mat-button (click)="saveTask()">Save Task</button>
     </mat-dialog-actions>

@@ -25,7 +25,7 @@
     </mat-card-content>
 </mat-card> -->
 
-<mat-card class="result">
+<!-- <mat-card class="result">
     <mat-card-content>
         <section class="example-section">
             <mat-checkbox class="example-margin" [(ngModel)]="checked" color="primary">
@@ -38,5 +38,29 @@
         </section>
         <section class="example-subtitle"></section>
     </mat-card-content>
-</mat-card>
- 
+</mat-card> -->
+
+<ul class="task-list">
+    <li *ngFor="let task of tasks" class="task-item">
+      <mat-card class="result">
+        <mat-card-content>
+          <section class="example-section">
+            <mat-checkbox class="example-margin" [(ngModel)]="task.taskPriority" color="primary">
+              {{ task.taskName }}
+            </mat-checkbox>
+            <input type="checkbox" id="my-icon-checkbox" class="icon-checkbox" [(ngModel)]="task.taskStatus">
+            <label for="my-icon-checkbox" class="icon-container">
+              <i class="fas fa-star"></i>
+            </label>
+          </section>
+          <section class="example-subtitle">
+            <p><strong>Task Description:</strong> {{ task.taskDescription }}</p>
+            <p><strong>Start Date:</strong> {{ task.startDate }}</p>
+            <p><strong>End Date:</strong> {{ task.endDate }}</p>
+            <p><strong>Repeat:</strong> {{ task.repeat }}</p>
+          </section>
+        </mat-card-content>
+      </mat-card>
+    </li>
+  </ul>
+  

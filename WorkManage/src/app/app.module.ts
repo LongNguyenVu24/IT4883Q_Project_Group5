@@ -69,7 +69,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     HttpClientModule,
     MatDialogModule
   ],
-  providers: [],
+  providers: [DialogModalContentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
