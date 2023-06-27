@@ -32,7 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogModalContentComponent } from './components/dialog-modal-content/dialog-modal-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SettingDialogComponent } from './components/setting-dialog/setting-dialog.component';
-
+import {MatListModule} from '@angular/material/list';
 @NgModule({
   declarations: [
     AppComponent,
@@ -69,7 +69,8 @@ import { SettingDialogComponent } from './components/setting-dialog/setting-dial
     MatBadgeModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatListModule
   ],
   providers: [DialogModalContentComponent],
   bootstrap: [AppComponent]
