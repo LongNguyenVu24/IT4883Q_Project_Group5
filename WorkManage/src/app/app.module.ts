@@ -32,6 +32,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { DialogModalContentComponent } from './components/dialog-modal-content/dialog-modal-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { SettingDialogComponent } from './components/setting-dialog/setting-dialog.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,7 @@ import { SettingDialogComponent } from './components/setting-dialog/setting-dial
     LoginComponent,
     DialogModalContentComponent,
     LandingviewComponent,
-    SettingDialogComponent
+    SettingDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -69,7 +70,8 @@ import { SettingDialogComponent } from './components/setting-dialog/setting-dial
     MatBadgeModule,
     FormsModule,
     HttpClientModule,
-    MatDialogModule
+    MatDialogModule,
+    MatCheckboxModule
   ],
   providers: [DialogModalContentComponent],
   bootstrap: [AppComponent]

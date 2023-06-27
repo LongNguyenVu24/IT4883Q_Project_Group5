@@ -28,3 +28,10 @@ body {
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {
     background-color: transparent;
 }
+
+/* modify "On" text in notification content */
+.mat-mdc-checkbox label {
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+}
