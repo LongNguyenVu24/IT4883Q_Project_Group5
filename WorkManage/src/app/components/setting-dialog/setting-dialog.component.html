@@ -19,6 +19,9 @@
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter your email">
         
+        
+      </div>
+      <div *ngIf="activeTab === 'preference'">
         <label for="language">Language</label>
         <select name="language" id="language">
           <option value="English">English</option>
@@ -26,14 +29,17 @@
           <option value="French">French</option>
         </select>
       </div>
-      <div *ngIf="activeTab === 'privacy'">
-        <p>Privacy settings go here</p>
-      </div>
       <div *ngIf="activeTab === 'notifications'">
         <p>Notification settings go here</p>
       </div>
-      <div *ngIf="activeTab === 'general'">
-        <p>Account settings go here</p>
+      <div *ngIf="activeTab === 'backup'">
+        <p>backup settings go here</p>
+      </div>
+      <div *ngIf="activeTab === 'aboutus'">
+        <p>about us settings go here</p>
+      </div>
+      <div *ngIf="activeTab === 'help'">
+        <p>help settings go here</p>
       </div>
     </div>
     <mat-dialog-actions>
