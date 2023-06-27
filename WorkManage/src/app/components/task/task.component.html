@@ -1,29 +1,6 @@
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
     integrity="sha384-6s1tX7d6i4oK+sjd0nHPTBf3wDGdJN6+0oYRjO6a4D5WKhbY6aZRyJL2Xr1z+6Ks" crossorigin="anonymous">
-<!-- <mat-card>
-    <mat-card-content>
-        <h2 class="example-h2">Checkbox configuration</h2>
 
-        <section class="example-section">
-            <mat-checkbox></mat-checkbox>
-           
-            <mat-checkbox class="example-margin" [(ngModel)]="checked">Checked</mat-checkbox>
-            <mat-checkbox class="example-margin" [(ngModel)]="indeterminate">Indeterminate</mat-checkbox>
-        </section>
-
-        <section class="example-section">
-            <label class="example-margin">Align:</label>
-            <mat-radio-group [(ngModel)]="labelPosition">
-                <mat-radio-button class="example-margin" value="after">After</mat-radio-button>
-                <mat-radio-button class="example-margin" value="before">Before</mat-radio-button>
-            </mat-radio-group>
-        </section>
-
-        <section class="example-section">
-            <mat-checkbox class="example-margin" [(ngModel)]="disabled">DisablhDisablhed</mat-checkbox>
-        </section>
-    </mat-card-content>
-</mat-card> -->
 
 <!-- <mat-card class="result">
     <mat-card-content>
@@ -39,9 +16,30 @@
         <section class="example-subtitle"></section>
     </mat-card-content>
 </mat-card> -->
+<mat-list class="task-list">
+  <mat-card mat-list-item *ngFor="let task of tasks" class="task-item" class="result">
+      <mat-card-content>
+        <section class="example-section">
+          <mat-checkbox class="example-margin" [(ngModel)]="task.taskPriority" color="primary">
+            {{ task.taskName }}
+          </mat-checkbox>
+          <input type="checkbox" id="my-icon-checkbox" class="icon-checkbox">
+          <label for="my-icon-checkbox" class="icon-container">
+            <i class="fas fa-star"></i>
+          </label>
+        </section>
+        <!-- <section class="example-subtitle">
+          <p><strong>Task Description:</strong> {{ task.taskDescription }}</p>
+          <p><strong>Start Date:</strong> {{ task.startDate }}</p>
+          <p><strong>End Date:</strong> {{ task.endDate }}</p>
+          <p><strong>Repeat:</strong> {{ task.repeat }}</p>
+        </section> -->
+      </mat-card-content>
+    </mat-card>
+</mat-list> 
 
-<ul class="task-list">
-    <li *ngFor="let task of tasks" class="task-item">
+<!-- <mat-list class="task-list">
+    <mat-list-item *ngFor="let task of tasks" class="task-item">
       <mat-card class="result">
         <mat-card-content>
           <section class="example-section">
@@ -61,8 +59,14 @@
           </section>
         </mat-card-content>
       </mat-card>
+<<<<<<< HEAD
     </li>
   </ul>
+=======
+    </mat-list-item>
+  </mat-list>  -->
+  
+>>>>>>> long-taskredef
 
   <ng-container *ngFor="let task of filteredTasks">
     <mat-card class="result">
