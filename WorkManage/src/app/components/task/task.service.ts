@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -23,5 +24,9 @@ export class TaskService {
 
   deleteTask(taskId: number) {
     return this.http.delete(`${this.baseUrl}/deletetask/${taskId}`);
+  }
+  searchTasks(searchTerm: string): Observable<any> {
+    const url = `${this.baseUrl}/tasks/search?taskName=${searchTerm}`;
+    return this.http.get(url);
   }
 }
