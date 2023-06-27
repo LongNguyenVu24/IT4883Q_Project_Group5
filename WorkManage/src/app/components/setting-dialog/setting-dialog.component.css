@@ -129,12 +129,19 @@
     height: 14px;
   } 
   .about-us a {
-    width: 130px;
+    width: 135px;
     text-decoration: none;
     color: #132039;
     font-size: 14px;
     font-family: 'Montserrat', sans-serif;
 
+  }
+
+  .about-us div:hover,
+  .about-us div:hover a {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
   }
 /* End: About us */
 
@@ -149,7 +156,7 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin: 15px 0px;
+    margin: 15px 0px 20px 0px;
 
     font-family: 'Montserrat', sans-serif;
     color: #132039;
