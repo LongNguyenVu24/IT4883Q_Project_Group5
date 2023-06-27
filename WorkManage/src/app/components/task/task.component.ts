@@ -9,6 +9,7 @@ import { HttpClient } from '@angular/common/http';
 import {TaskService} from './task.service';
 import { DialogModalContentComponent } from '../dialog-modal-content/dialog-modal-content.component';
 import { CommonModule } from '@angular/common';
+import { MatListModule } from '@angular/material/list';
 interface Task {
   taskName: string;
   taskDiscription: string;
@@ -29,7 +30,8 @@ interface Task {
     FormsModule, 
     MatRadioModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatListModule
   ],
 })
 
