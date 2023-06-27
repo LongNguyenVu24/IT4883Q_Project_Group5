@@ -28,6 +28,9 @@
     color: rgb(0, 0, 0);
     animation: pop_42 0.5s ease-out;
   }
+  mat-card mat-list-item{
+    padding: 16px 0;
+  }
   
   @keyframes pop_42 {
     0% {

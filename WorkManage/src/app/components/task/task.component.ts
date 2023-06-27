@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -9,7 +9,8 @@ import { HttpClient } from '@angular/common/http';
 import {TaskService} from './task.service';
 import { DialogModalContentComponent } from '../dialog-modal-content/dialog-modal-content.component';
 import { CommonModule } from '@angular/common';
-interface Task {
+import { MatListModule } from '@angular/material/list';
+export interface Task {
   taskName: string;
   taskDiscription: string;
   startDate: string;
@@ -29,7 +30,8 @@ interface Task {
     FormsModule, 
     MatRadioModule,
     MatButtonModule,
-    CommonModule
+    CommonModule,
+    MatListModule
   ],
 })
 
@@ -37,10 +39,11 @@ export class TaskComponent implements OnInit{
   checked = false;
   imchecked = false;
   
-
+  @Input() searchQuery: string = '';
   
   tasks: Task[] = [];
 
+  filteredTasks: Task[] = [];
   constructor(
     private taskService: TaskService,
     private dialogModalContentComponent: DialogModalContentComponent
@@ -64,5 +67,14 @@ saveTask(task: any): void {
   this.dialogModalContentComponent.saveTask();
 }
 
+filterTasks(): void {
+  if (this.searchQuery) {
+    this.filteredTasks = this.tasks.filter((task: Task) => {
+      return task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase());
+    });
+  } else {
+    this.filteredTasks = this.tasks;
+  }
+}
 
 }
