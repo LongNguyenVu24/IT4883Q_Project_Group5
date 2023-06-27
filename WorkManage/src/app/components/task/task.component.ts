@@ -11,7 +11,7 @@ import { DialogModalContentComponent } from '../dialog-modal-content/dialog-moda
 import { CommonModule } from '@angular/common';
 interface Task {
   taskName: string;
-  taskDescription: string;
+  taskDiscription: string;
   startDate: string;
   endDate: string;
   taskPriority: boolean;

@@ -29,12 +29,12 @@ export class DialogModalContentComponent {
       repeat: this.repeat,
     };
 
-    
+   
 
 
 
     this.http
-      .post('http://localhost:8003/api/task/save', taskSaveDTO, {
+      .post<any>('http://localhost:8003/api/task/save', taskSaveDTO, {
         responseType: 'json',
       })
       .subscribe(
