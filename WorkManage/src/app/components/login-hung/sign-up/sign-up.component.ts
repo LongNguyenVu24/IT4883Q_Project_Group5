@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+// import { MatDialog } from '@angular/material/dialog';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -13,41 +14,35 @@ export class SignUpComponent {
   telephone: string = '';
   confirmPassword: string = '';
   fullname: string = '';
+  token:String='';
+  exist:String='';
+  noticeIfUserExist:String='';
   constructor(private http: HttpClient) { } 
-  // submitForm() {
-  //   const formValues = {
-  //     username: this.username,
-  //     email: this.email,
-  //     password: this.password,
-  //     confirmPassword: this.confirmPassword,
-  //     telephone: this.telephone
-  //   };
-  
-  //   this.http.post('http://localhost:8003/api/v1/auth/register', formValues).subscribe(
-  //     (response) => {
-  //       // Handle the success response here
-  //       console.log(response);
-  //     },
-  //     (error) => {
-  //       // Handle the error response here
-  //       console.error(error);
-  //     }
-  //   );
-  // }
 
-  public register() {
+  public async register() {
     
     const registerData = {
-      username: 'dat@gmail.com',
-      password: '12345678',
-      fullname:'lethanhdat'
+      email: this.email,
+      password: this.password,
+      fullName:this.fullname  
     };
 
     try {
-      const response =  this.http.post('http://localhost:8003/api/v1/auth/register', registerData,{
+      const response =await  this.http.post('http://localhost:8003/api/v1/auth/register', registerData,{responseType:"text"
         // headers:new HttpHeaders().set('Authorization','Bearer '+localStorage.getItem('access_token'))
-      }).toPromise();
-      console.log(response);
+      });
+      
+   await response.forEach(value=>{
+     var x = JSON.parse(value);
+     this.token=x['token'];
+     this.exist=x['exist'];
+     this.noticeIfUserExist=x['noticeIfUserExist'];
+
+      });
+      console.log(this.token);  
+      console.log(this.noticeIfUserExist);
+      alert(this.noticeIfUserExist)
+
     } catch (error) {
       console.log(error);
     }

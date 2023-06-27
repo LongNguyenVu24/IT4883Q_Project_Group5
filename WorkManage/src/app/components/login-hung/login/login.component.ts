@@ -34,7 +34,7 @@ export class LoginComponent {
         this.router.navigate(['today']);
        }
     } catch (error) {
-      alert("The information does not match")
+      alert("The information does not correct")
     }
   }
 }
