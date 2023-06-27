@@ -25,14 +25,16 @@
                 <mat-icon >perm_identity</mat-icon>
             </button>
             <mat-menu #hello="matMenu">
-                <button mat-menu-item>fuch u bitch</button>
-                <button mat-menu-item>fuch u bitch 2</button>
-                <button mat-menu-item>fuch u bitch 3</button>
+                <button mat-menu-item (click)="openDialog()">Account</button>
+                <button mat-menu-item (click)="openDialog()">Preference</button>
+                <button mat-menu-item (click)="openDialog()">About us</button>
+                <button mat-menu-item (click)="openDialog()">Help & Support</button>
+                <button mat-menu-item >Log out</button>
             </mat-menu>
 
             <mat-menu #hello2="matMenu">
                 <button mat-menu-item>fuch u bitch</button>
-                <button mat-menu-item>fuch u bitch</button>
+                
                 <button mat-menu-item>fuch u bitch</button>
             </mat-menu>
         </div>

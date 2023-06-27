@@ -1,0 +1,42 @@
+<mat-dialog-content class="settings-dialog">
+    <div class="sidebar">
+      <ul>
+        <li [class.active]="activeTab === 'backup'" (click)="activeTab = 'backup'">Back-Up</li>
+        <li [class.active]="activeTab === 'preference'" (click)="activeTab = 'preference'">Preference</li>
+        <li [class.active]="activeTab === 'notifications'" (click)="activeTab = 'notifications'">Notifications</li>
+        <li [class.active]="activeTab === 'account'" (click)="activeTab = 'account'">Account</li>
+        <li [class.active]="activeTab === 'aboutus'" (click)="activeTab = 'aboutus'">About us</li>
+        <li [class.active]="activeTab === 'help'" (click)="activeTab = 'help'">Help & Support</li>
+      </ul>
+    </div>
+    <div class="content">
+      <h2>{{ activeTab }}</h2>
+      <div *ngIf="activeTab === 'account'">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name">
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email">
+        
+        <label for="language">Language</label>
+        <select name="language" id="language">
+          <option value="English">English</option>
+          <option value="Spanish">Spanish</option>
+          <option value="French">French</option>
+        </select>
+      </div>
+      <div *ngIf="activeTab === 'privacy'">
+        <p>Privacy settings go here</p>
+      </div>
+      <div *ngIf="activeTab === 'notifications'">
+        <p>Notification settings go here</p>
+      </div>
+      <div *ngIf="activeTab === 'general'">
+        <p>Account settings go here</p>
+      </div>
+    </div>
+    <mat-dialog-actions>
+      <button mat-button mat-dialog-close>Cancel</button>
+      <button mat-raised-button color="warn">Apply</button>
+    </mat-dialog-actions>
+  </mat-dialog-content>

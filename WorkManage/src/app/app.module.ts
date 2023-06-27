@@ -31,6 +31,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModalContentComponent } from './components/dialog-modal-content/dialog-modal-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { SettingDialogComponent } from './components/setting-dialog/setting-dialog.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { MatDialogModule } from '@angular/material/dialog';
     SignUpComponent,
     LoginComponent,
     DialogModalContentComponent,
-    LandingviewComponent
+    LandingviewComponent,
+    SettingDialogComponent
   ],
   imports: [
     BrowserModule,
