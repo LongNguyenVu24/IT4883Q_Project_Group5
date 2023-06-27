@@ -1,4 +1,4 @@
-<h2 mat-dialog-title>Create Task</h2>
+<h3 mat-dialog-title>Add Task</h3>
 <mat-dialog-content class="mat-typography">
     <div >
 
@@ -14,11 +14,11 @@
         <label for="endDate">End Date:</label>
         <input type="date" id="endDate" [(ngModel)]="endDate" required>
 
-        <label for="taskPriority">Task Priority:</label>
+        <label for="taskPriority">Important:</label>
         <input type="checkbox" id="taskPriority" [(ngModel)]="taskPriority">
 
-        <label for="taskStatus">Task Status:</label>
-        <input type="checkbox" id="taskStatus" [(ngModel)]="taskStatus">
+        <!-- <label for="taskStatus">Task Status:</label>
+        <input type="checkbox" id="taskStatus" [(ngModel)]="taskStatus"> -->
 
         <label for="repeat">Repeat:</label>
         <input type="checkbox" id="repeat"  [(ngModel)]="repeat">
@@ -27,5 +27,5 @@
 
     <mat-dialog-actions>
         <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-button (click)="saveTask()">Save Task</button>
+        <button mat-raised-button (click)="saveTask()">Save Task</button>
     </mat-dialog-actions>
