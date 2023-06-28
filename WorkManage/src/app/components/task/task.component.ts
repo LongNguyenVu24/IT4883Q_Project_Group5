@@ -5,11 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import {TaskService} from './task.service';
 import { DialogModalContentComponent } from '../dialog-modal-content/dialog-modal-content.component';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
+import { Observable } from 'rxjs';
 export interface Task {
   taskName: string;
   taskDiscription: string;
@@ -17,6 +18,16 @@ export interface Task {
   endDate: string;
   taskPriority: boolean;
   taskStatus: boolean;
+  repeat: boolean;
+}
+export interface TaskDTO {
+  taskId: number;
+  taskName: string;
+  taskDescription: string;
+  startDate: string;
+  endDate: string;
+  taskStatus: boolean;
+  taskPriority: boolean;
   repeat: boolean;
 }
 @Component({
@@ -39,14 +50,14 @@ export class TaskComponent implements OnInit{
   checked = false;
   imchecked = false;
   
-  @Input() searchQuery: string = '';
-  
-  tasks: Task[] = [];
-
+  @Input() tasks!: TaskDTO[];
+  @Input() searchResults: TaskDTO[] = [];
+  private apiUrl = 'http://localhost:8003/api/task/search'
   filteredTasks: Task[] = [];
   constructor(
     private taskService: TaskService,
-    private dialogModalContentComponent: DialogModalContentComponent
+    private dialogModalContentComponent: DialogModalContentComponent,
+    private http: HttpClient
   ) {}
 
   ngOnInit(): void {
@@ -67,14 +78,19 @@ saveTask(task: any): void {
   this.dialogModalContentComponent.saveTask();
 }
 
-filterTasks(): void {
-  if (this.searchQuery) {
-    this.filteredTasks = this.tasks.filter((task: Task) => {
-      return task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase());
-    });
-  } else {
-    this.filteredTasks = this.tasks;
+searchTasks(taskName?: string, startDate?: string, endDate?: string): Observable<TaskDTO[]> {
+  let params = new HttpParams();
+  if (taskName) {
+    params = params.set('taskName', taskName);
   }
+  if (startDate) {
+    params = params.set('startDate', startDate);
+  }
+  if (endDate) {
+    params = params.set('endDate', endDate);
+  }
+
+  return this.http.get<TaskDTO[]>(`${this.apiUrl}/search`, { params });
+}
 }
 
-}

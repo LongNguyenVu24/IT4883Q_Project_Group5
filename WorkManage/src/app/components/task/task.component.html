@@ -39,7 +39,7 @@
 </mat-list> 
 
 
-    <mat-list-item *ngFor="let task of tasks" class="task-item">
+    <!-- <mat-list-item *ngFor="let task of tasks" class="task-item">
       <mat-card class="result">
         <mat-card-content>
           <section class="example-section">
@@ -59,9 +59,9 @@
           </section>
         </mat-card-content>
       </mat-card>
-    </mat-list-item>
+    </mat-list-item> -->
   
-  
+<!--   
 
   <ng-container *ngFor="let task of filteredTasks">
     <mat-card class="result">
@@ -84,4 +84,26 @@
       </mat-card-content>
     </mat-card>
   </ng-container>
- 
+  -->
+
+
+
+  <mat-list class="task-list">
+    <mat-card *ngIf="searchResults && searchResults.length > 0" class="task-item">
+      <mat-card-content>
+        <h2>Search Results:</h2>
+        <mat-list>
+          <mat-list-item *ngFor="let task of searchResults" class="result">
+            <mat-checkbox [(ngModel)]="task.taskPriority" color="primary">
+              {{ task.taskName }}
+            </mat-checkbox>
+          </mat-list-item>
+        </mat-list>
+      </mat-card-content>
+    </mat-card>
+    <mat-card *ngIf="searchResults && searchResults.length === 0" class="task-item">
+      <mat-card-content>
+        <h2>No Results Found</h2>
+      </mat-card-content>
+    </mat-card>
+  </mat-list>
