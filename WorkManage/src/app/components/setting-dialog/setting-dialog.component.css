@@ -3,13 +3,20 @@
     flex-direction: row;
     
   }
-  
-  .sidebar {
+
+/* Start: side bar */
+.sidebar {
     background-color: #f1f1f1;
     padding: 20px;
     width: 200px;
+    border-radius: 15px;
+
   }
   
+.sidebar li:first-child {
+    margin-top: 20px;
+  }
+
   .sidebar ul {
     list-style-type: none;
     margin: 0;
@@ -21,31 +28,139 @@
     margin-bottom: 10px;
     padding: 10px;
     transition: background-color 0.3s ease;
+
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
   }
   
   .sidebar li.active {
     background-color: #ddd;
+    border-radius: 10px;
+    
   }
-  
+/* End: side bar */
+
   .content {
     padding: 20px;
     width: calc(100% - 200px);
+    height: 575px;
   }
   
   h2 {
     margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  hr {
+    margin: 20px 0px;
   }
   
+  .content label {
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* Start: Photo content */
+  .content .photo-content {
+    display: flex;
+    margin: 15px 0px;
+    align-items: center;
+  }
+
+  .content .photo-content img {
+    height: 120px;
+    width: 120px;
+    border-radius: 50%;
+    margin-right: 40px;
+  }
+
+  .content .photo-content .change-photo {
+    background-color: #FAFAFA;
+  }
+  /* End: Photo content */
+
+
+  /* Start: Notification content */
+  .notification-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .notification-content mat-checkbox {
+    margin-top: 5px;
+    margin-bottom: 15px ;
+  }
+  /* End: Notification content */
+
+  /* Start: Back up */
+  .back-up {
+    display: flex;
+    flex-direction: column;
+    gap: 72px;
+  }
+
+  .back-up label:last-child {
+    margin-bottom: 52px;
+  }
+  /* End: Back up */
+
+/* Start: About us */
+  .about-us {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-us div {
+    margin-top: 30px;
+    display: flex;
+    gap: 10px;
+  }
+
+  .about-us img {
+    width: 14px;
+    height: 14px;
+  } 
+  .about-us a {
+    width: 135px;
+    text-decoration: none;
+    color: #132039;
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+
+  .about-us div:hover,
+  .about-us div:hover a {
+    cursor: pointer;
+    text-decoration: underline;
+    font-weight: 600;
+  }
+/* End: About us */
+
   input[type="text"],
   input[type="email"],
-  select {
+  input[type="password"],
+  select,
+  option {
     display: block;
-    width: 100%;
+    width: 232px;
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    margin: 15px 0px 20px 0px;
+
+    font-family: 'Montserrat', sans-serif;
+    color: #132039;
+    font-size: 14px;
   }
   
   mat-dialog-actions {

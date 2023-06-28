@@ -1,49 +1,142 @@
 <mat-dialog-content class="settings-dialog">
     <div class="sidebar">
+      <h2>Setting</h2>
+      
       <ul>
-        <li [class.active]="activeTab === 'account'" (click)="activeTab = 'account'">Account</li>
-
-        <li [class.active]="activeTab === 'preference'" (click)="activeTab = 'preference'">Preference</li>
-        <li [class.active]="activeTab === 'notifications'" (click)="activeTab = 'notifications'">Notifications</li>
-        <li [class.active]="activeTab === 'backup'" (click)="activeTab = 'backup'">Back-Up</li>      
-        <li [class.active]="activeTab === 'aboutus'" (click)="activeTab = 'aboutus'">About us</li>
-        <li [class.active]="activeTab === 'help'" (click)="activeTab = 'help'">Help & Support</li>
+        <li [class.active]="activeTab === 'Account'" (click)="activeTab = 'Account'">Account</li>
+        <li [class.active]="activeTab === 'Preference'" (click)="activeTab = 'Preference'">Preference</li>
+        <li [class.active]="activeTab === 'Notifications'" (click)="activeTab = 'Notifications'">Notifications</li>
+        <li [class.active]="activeTab === 'Back Up'" (click)="activeTab = 'Back Up'">Back-Up</li>      
+        <li [class.active]="activeTab === 'About Us'" (click)="activeTab = 'About Us'">About us</li>
+        <li [class.active]="activeTab === 'Help'" (click)="activeTab = 'Help'">Help & Support</li>
       </ul>
     </div>
     <div class="content">
       <h2>{{ activeTab }}</h2>
-      <div *ngIf="activeTab === 'account'">
+      <hr>
+
+      <!-- Start: Account content -->
+      <div *ngIf="activeTab === 'Account'">
+        
+        <label for="name">Photo</label>
+        <div class="photo-content">
+            <img src="assets\image\ava_demo.jpg" alt="avatar">
+            <button class="change-photo" mat-flat-button>Change Photo</button>
+        </div>
+
+        <hr>
+
         <label for="name">Name</label>
         <input type="text" id="name" name="name" placeholder="Enter your name">
         
         <label for="email">Email</label>
         <input type="email" id="email" name="email" placeholder="Enter your email">
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password">
         
         
       </div>
-      <div *ngIf="activeTab === 'preference'">
+      <!-- End: Account content -->
+      
+      <!-- Start: Preference content -->
+      <div *ngIf="activeTab === 'Preference'">
         <label for="language">Language</label>
         <select name="language" id="language">
           <option value="English">English</option>
           <option value="Spanish">Spanish</option>
           <option value="French">French</option>
         </select>
+
+        <label for="date-format">Date Format</label>
+        <select name="date-format" id="date-format">
+          <option value="dd-mm-yyyy">DD-MM-YYYY</option>
+          <option value="mm-dd-yyyy">MM-DD-YYYY</option>
+        </select>
+
+        <label for="theme">Theme</label>
+        <select name="theme" id="theme">
+          <option value="light">Light</option>
+          <option value="dark">Dark</option>
+        </select>
       </div>
-      <div *ngIf="activeTab === 'notifications'">
-        <p>Notification settings go here</p>
+      <!-- End: Preference content -->
+
+      <!-- Start: Notification -->
+      <div class="notification-content" *ngIf="activeTab === 'Notifications'">
+        <label for="task-status">Reminders</label>
+        <mat-checkbox class="example-margin">On</mat-checkbox>
+
+        
+        <label for="task-status">Task status</label>
+        <select name="task-status" id="task-status">
+          <option value="overdue-first">Overdue First</option>
+        </select>
       </div>
-      <div *ngIf="activeTab === 'backup'">
-        <p>backup settings go here</p>
+      <!-- End: Notification -->
+
+      <!-- Start: Back up -->
+      <div class="back-up" *ngIf="activeTab === 'Back Up'">
+        <label for="export">Export</label>
+        <label for="import">Import</label>
+        <label for="sync">Sync</label>
+
       </div>
-      <div *ngIf="activeTab === 'aboutus'">
-        <p>about us settings go here</p>
+      <!-- End: Back up -->
+
+      <!-- Start: About Us -->
+      <div class="about-us" *ngIf="activeTab === 'About Us'">
+        <label for="team-members">Team members</label>
+        <div>
+          <a href="https://github.com/LongNguyenVu24">Long.V Nguyen</a>
+          <img src="assets\image\github_icon.png" alt="">
+        </div>
+
+        <div>
+          <a href="https://github.com/hungnm12">Hung.M Nguyen</a>
+          <img src="assets\image\github_icon.png" alt="">
+
+        </div>
+
+        <div>
+          <a href="https://github.com/HungNguyen20207677">Hung.Q Nguyen</a>
+          <img src="assets\image\github_icon.png" alt="">
+
+        </div>
+
+        <div>
+          <a href="https://github.com/lethanhdathust">Dat.T Nguyen</a>
+          <img src="assets\image\github_icon.png" alt="">
+
+        </div>
+
+        <div>
+          <a href="https://github.com/OLW712002">Duy.V Nguyen</a>
+          <img src="assets\image\github_icon.png" alt="">
+
+        </div>
       </div>
-      <div *ngIf="activeTab === 'help'">
+      <!-- End: About Us -->
+
+      <!-- Start: Help -->
+      <div *ngIf="activeTab === 'Help'">
         <p>help settings go here</p>
       </div>
+      <!-- End: Help -->
+
+       <hr>
+
+       <!-- Cancel and Apply Buttons -->
+       <mat-dialog-actions>
+        <button mat-button mat-dialog-close>Cancel</button>
+        <button mat-raised-button color="warn">Apply</button>
+      </mat-dialog-actions>
     </div>
-    <mat-dialog-actions>
+
+    <!-- <mat-dialog-actions>
       <button mat-button mat-dialog-close>Cancel</button>
       <button mat-raised-button color="warn">Apply</button>
-    </mat-dialog-actions>
+    </mat-dialog-actions> -->
+
+
   </mat-dialog-content>

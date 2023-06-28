@@ -7,7 +7,7 @@ import { MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./setting-dialog.component.css']
 })
 export class SettingDialogComponent {
-  activeTab = 'account';
+  activeTab = 'Account';
 
   constructor(public dialogRef: MatDialogRef<SettingDialogComponent>) { }
 
