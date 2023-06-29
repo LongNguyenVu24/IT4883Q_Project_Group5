@@ -11,10 +11,4 @@ export class LandingviewComponent {
   constructor(
     public dialog: MatDialog
   ) { }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(DialogModalContentComponent, {
-      width: '520px'
-    });
-}
 }

@@ -1,5 +1,6 @@
+import { catchError } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -10,7 +11,12 @@ import {TaskService} from './task.service';
 import { DialogModalContentComponent } from '../dialog-modal-content/dialog-modal-content.component';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
+import { ChangeDetectorRef } from '@angular/core';
+
+  import {ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 export interface Task {
+  taskID: number;
   taskName: string;
   taskDiscription: string;
   startDate: string;
@@ -31,11 +37,20 @@ export interface Task {
     MatRadioModule,
     MatButtonModule,
     CommonModule,
-    MatListModule
+    MatListModule,
+    MatDialogModule
   ],
 })
 
 export class TaskComponent implements OnInit{
+  // @ViewChild("outlet", { read: ViewContainerRef })
+  // outletRef!: ViewContainerRef;
+  // @ViewChild("content", { read: TemplateRef })
+  // contentRef!: TemplateRef<any>;
+
+  // ngAfterContentInit() {
+  //   this.outletRef.createEmbeddedView(this.contentRef);
+  // }
   checked = false;
   imchecked = false;
   
@@ -47,12 +62,22 @@ export class TaskComponent implements OnInit{
   constructor(
     private taskService: TaskService,
     private dialogModalContentComponent: DialogModalContentComponent
+    ,private cdr: ChangeDetectorRef,
+    public dialog: MatDialog
+    // private templateRef:    TemplateRef<any>,
+    // private viewContainer:  ViewContainerRef
   ) {}
-
+  // @Input() set rerender(val: any) {
+  //   this.viewContainer.clear();
+  //   this.viewContainer.createEmbeddedView(this.templateRef);
+  // }
   ngOnInit(): void {
     this.getAllTasks();
+    // this.saveTask();
   }
-
+//  ngOnChanges(changes: SimpleChanges): void {
+//   this.saveTask();
+//  }
   getAllTasks(): void {
     this.taskService.getAllTasks().subscribe(
       (response: any) => {
@@ -62,10 +87,16 @@ export class TaskComponent implements OnInit{
         console.error('Error fetching tasks:', error);
       }
     );
+
   }
-saveTask(task: any): void {
-  this.dialogModalContentComponent.saveTask();
-}
+//  async saveTask() {
+//   console.log(1);
+  
+//   let response = this.dialogModalContentComponent.saveTask();
+//   if (response) {
+//     this.getAllTasks()
+//   }
+// }
 
 filterTasks(): void {
   if (this.searchQuery) {
@@ -75,6 +106,17 @@ filterTasks(): void {
   } else {
     this.filteredTasks = this.tasks;
   }
+}
+
+openDialog(): void {
+  const dialogRef = this.dialog.open(DialogModalContentComponent, {
+    width: '520px'
+  });
+  dialogRef.afterClosed().subscribe(result => {
+    if (result) {
+      this.getAllTasks();
+    }
+  });
 }
 
 }

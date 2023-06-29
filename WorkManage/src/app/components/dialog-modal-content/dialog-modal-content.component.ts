@@ -1,13 +1,23 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, ChangeDetectorRef, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { TaskService } from '../task/task.service';
+import { Task } from '../task/task.component';
+import { DialogRef } from '@angular/cdk/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
 
+// import { ChangeDetectorRef } from '@angular/core';
 @Component({
   selector: 'app-dialog-modal-content',
   templateUrl: './dialog-modal-content.component.html',
   styleUrls: ['./dialog-modal-content.component.css'],
+  standalone: true,
+  imports: [MatDialogModule, FormsModule, ReactiveFormsModule, MatButtonModule],
+
 })
 
-export class DialogModalContentComponent {
+export class DialogModalContentComponent{
   taskName: string = ''; // Assign a default value or initialize in the constructor
   taskDiscription: string = '';
   startDate: string = '';
@@ -15,10 +25,10 @@ export class DialogModalContentComponent {
   taskPriority: boolean = false;
   taskStatus: boolean = false;
   repeat: boolean = false;
+  @Output() taskAdded = new EventEmitter();
+  constructor(private http: HttpClient,private cdr:ChangeDetectorRef,private taskService: TaskService, private dialogRef: MatDialogRef<DialogModalContentComponent>) {}
 
-  constructor(private http: HttpClient) {}
-
-  saveTask(): void {
+  async saveTask() {
     const taskSaveDTO = {
       taskName: this.taskName,
       taskDiscription: this.taskDiscription,
@@ -28,33 +38,11 @@ export class DialogModalContentComponent {
       taskStatus: this.taskStatus,
       repeat: this.repeat,
     };
-
-   
-
-
-
-    this.http
-      .post<any>('http://localhost:8003/api/task/save', taskSaveDTO, {
-        responseType: 'json',
-      })
-      .subscribe(
-        (response) => {
-          // Handle successful response
-          
-          console.log('Task saved successfully:', response);
-          
-          alert('Task saved successfully!');
-        },
-        (error) => {
-          // Handle error
-          console.error('Error saving task:', error);
-          const errorMessage = error.message || 'Unknown error occurred.';
-          alert(
-            'Error saving task. Please try again.\n\nError Details: ' +
-              error.message
-          );
-        }
-      );
+// console.log(taskSaveDTO);
+    let resust = await this.taskService.saveTask(taskSaveDTO).toPromise();
+    if (resust) {
+      this.dialogRef.close(true);
+    }
   }
 
 

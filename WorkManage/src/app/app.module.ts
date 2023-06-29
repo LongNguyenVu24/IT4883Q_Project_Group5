@@ -30,7 +30,7 @@ import { LoginComponent } from './components/login-hung/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { DialogModalContentComponent } from './components/dialog-modal-content/dialog-modal-content.component';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SettingDialogComponent } from './components/setting-dialog/setting-dialog.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
@@ -49,7 +49,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     LoginHungComponent,
     SignUpComponent,
     LoginComponent,
-    DialogModalContentComponent,
+    // DialogModalContentComponent,
     LandingviewComponent,
     SettingDialogComponent,
   ],
@@ -71,9 +71,12 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     FormsModule,
     HttpClientModule,
     MatDialogModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    // DialogModalContentComponent
   ],
-  providers: [DialogModalContentComponent],
+  providers: [
+    {provide:MatDialogRef , useValue:{DialogModalContentComponent} },
+    DialogModalContentComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
