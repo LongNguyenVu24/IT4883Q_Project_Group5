@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { TaskDTO } from './task.component';
 
 @Injectable({
   providedIn: 'root'
@@ -25,8 +26,11 @@ export class TaskService {
   deleteTask(taskId: number) {
     return this.http.delete(`${this.baseUrl}/deletetask/${taskId}`);
   }
-  searchTasks(searchTerm: string): Observable<any> {
-    const url = `${this.baseUrl}/tasks/search?taskName=${searchTerm}`;
-    return this.http.get(url);
+ 
+  searchTasks(searchQuery: string): Observable<TaskDTO[]> {
+    let params = new HttpParams();
+    params = params.set('taskName', searchQuery);
+  
+    return this.http.get<TaskDTO[]>(`${this.baseUrl}/search`, { params });
   }
 }

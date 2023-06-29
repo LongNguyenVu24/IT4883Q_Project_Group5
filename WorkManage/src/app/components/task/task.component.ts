@@ -120,3 +120,17 @@ openDialog(): void {
 }
 
 }
+// searchTasks(taskName?: string, startDate?: string, endDate?: string): Observable<TaskDTO[]> {
+//   let params = new HttpParams();
+//   if (taskName) {
+//     params = params.set('taskName', taskName);
+//   }
+//   if (startDate) {
+//     params = params.set('startDate', startDate);
+//   }
+//   if (endDate) {
+//     params = params.set('endDate', endDate);
+//   }
+
+//   return this.http.get<TaskDTO[]>(`${this.apiUrl}/search`, { params });
+// }
