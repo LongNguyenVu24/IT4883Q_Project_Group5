@@ -4,7 +4,7 @@ import { SettingDialogComponent } from '../setting-dialog/setting-dialog.compone
 import { TaskService } from '../task/task.service';
 import {Task} from '../task/task.component';
 import { TaskSearchService } from '../task/task-search.service';  
-import { TaskDTO } from '../task/task.component';
+// import { TaskDTO } from '../task/task.component';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -15,7 +15,7 @@ export class HomepageComponent  {
   startDate: string = '';
   endDate: string = '';
   searchQuery: string = '';
-  searchResults: TaskDTO[] = [];
+  // searchResults: TaskDTO[] = [];
   constructor(public dialog: MatDialog, private taskService: TaskService) { }
 
 
@@ -23,20 +23,20 @@ export class HomepageComponent  {
   //   this.dialog.close();
   // }
 
-  searchTasks() {
-    if (this.searchQuery) {
-      this.taskService.searchTasks(this.searchQuery).subscribe(
-        (results: TaskDTO[]) => {
-          this.searchResults = results;
-        },
-        (error) => {
-          console.error('Error searching tasks:', error);
-        }
-      );
-    } else {
-      this.searchResults = [];
-    }
-  }
+  // searchTasks() {
+  //   if (this.searchQuery) {
+  //     this.taskService.searchTasks(this.searchQuery).subscribe(
+  //       (results: TaskDTO[]) => {
+  //         this.searchResults = results;
+  //       },
+  //       (error) => {
+  //         console.error('Error searching tasks:', error);
+  //       }
+  //     );
+  //   } else {
+  //     this.searchResults = [];
+  //   }
+  // }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SettingDialogComponent, {

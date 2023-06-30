@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Chart  } from 'chart.js';
+// import { Chart  } from 'chart.js';
 @Component({
   selector: 'app-process',
   templateUrl: './process.component.html',
