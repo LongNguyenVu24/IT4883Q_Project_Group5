@@ -1,13 +1,23 @@
-import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { Chart  } from 'chart.js';
+import { gantt } from 'dhtmlx-gantt';
 @Component({
+  encapsulation: ViewEncapsulation.None,
   selector: 'app-process',
-  templateUrl: './process.component.html',
+  // templateUrl: './process.component.html',
+  template: `<div #gantt_here class='gantt-chart'></div>`,
   styleUrls: ['./process.component.css']
 })
-export class ProcessComponent {
- 
+export class ProcessComponent implements OnInit {
+ //new 
+ @ViewChild('gantt_here', { static:true}) ganttContainer!: ElementRef;
+
+ ngOnInit() {
+     gantt.init(this.ganttContainer.nativeElement);
+ }
+
+  // old
   // tasks: any[] = [];
   // startDate: string = '';
   // endDate: string = '';
