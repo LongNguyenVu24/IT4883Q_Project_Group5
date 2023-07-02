@@ -2,20 +2,6 @@
     integrity="sha384-6s1tX7d6i4oK+sjd0nHPTBf3wDGdJN6+0oYRjO6a4D5WKhbY6aZRyJL2Xr1z+6Ks" crossorigin="anonymous">
 
 
-<!-- <mat-card class="result">
-    <mat-card-content>
-        <section class="example-section">
-            <mat-checkbox class="example-margin" [(ngModel)]="checked" color="primary">
-                I'm a checkbox
-            </mat-checkbox>
-            <input type="checkbox" id="my-icon-checkbox" class="icon-checkbox" [(ngModel)]="imchecked">
-            <label for="my-icon-checkbox" class="icon-container">
-                <i class="fas fa-star"></i>
-            </label>
-        </section>
-        <section class="example-subtitle"></section>
-    </mat-card-content>
-</mat-card> -->
 <mat-list class="task-list">
   <mat-card mat-list-item *ngFor="let task of tasks" class="task-item" class="result">
       <mat-card-content>
@@ -39,31 +25,9 @@
 </mat-list> 
 
 
-    <mat-list-item *ngFor="let task of tasks" class="task-item">
-      <mat-card class="result">
-        <mat-card-content>
-          <section class="example-section">
-            <mat-checkbox class="example-margin" [(ngModel)]="task.taskPriority" color="primary">
-              {{ task.taskName }}
-            </mat-checkbox>
-            <input type="checkbox" id="my-icon-checkbox" class="icon-checkbox" [(ngModel)]="task.taskStatus">
-            <label for="my-icon-checkbox" class="icon-container">
-              <i class="fas fa-star"></i>
-            </label>
-          </section>
-          <section class="example-subtitle">
-            <p><strong>Task Description:</strong> {{ task.taskDiscription }}</p>
-            <p><strong>Start Date:</strong> {{ task.startDate }}</p>
-            <p><strong>End Date:</strong> {{ task.endDate }}</p>
-            <p><strong>Repeat:</strong> {{ task.repeat }}</p>
-          </section>
-        </mat-card-content>
-      </mat-card>
-    </mat-list-item>
-  
   
 
-  <ng-container *ngFor="let task of filteredTasks">
+  <!-- <ng-container *ngFor="let task of filteredTasks">
     <mat-card class="result">
       <mat-card-content>
         <section class="task-details">
@@ -83,5 +47,5 @@
         </section>
       </mat-card-content>
     </mat-card>
-  </ng-container>
+  </ng-container> -->
   <button mat-button (click)="openDialog()">Add Task</button>
