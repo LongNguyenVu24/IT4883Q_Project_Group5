@@ -2,15 +2,15 @@
     integrity="sha384-6s1tX7d6i4oK+sjd0nHPTBf3wDGdJN6+0oYRjO6a4D5WKhbY6aZRyJL2Xr1z+6Ks" crossorigin="anonymous">
 
 
-<mat-list *ngFor="let task of tasks" class="task-list">
+<mat-list *ngFor="let task of tasks" class="task-list" >
   <mat-card mat-list-item  class="task-item" class="result">
       <mat-card-content>
         <section class="example-section">
-          <mat-checkbox class="example-margin"  color="primary" (change)="moveToCompleted(task)">
-            {{ task.taskName }}
+          <mat-checkbox class="example-margin" color="primary" [(ngModel)]="task.taskStatus">
+            <span [ngClass]="{'task-completed': task.taskStatus}">{{ task.taskName }}</span>
           </mat-checkbox>
           <input type="checkbox" id="my-icon-checkbox" [(ngModel)]="task.taskPriority" class="icon-checkbox">
-          <label for="my-icon-checkbox" class="icon-container">
+          <label for="my-icon-checkbox" class="icon-container"  [ngClass]="{'task-important': task.taskPriority}">
             <i class="fas fa-star"></i>
           </label>
         </section>
@@ -65,3 +65,7 @@
     </mat-card>
   </ng-container> -->
   <button mat-button (click)="openDialog()">Add Task</button>
+
+
+
+ 
