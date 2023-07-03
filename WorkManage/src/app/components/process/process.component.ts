@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Task, gantt } from 'dhtmlx-gantt';
 import { from } from 'rxjs';
 import { GanttService } from './process.service';
-import { mapTaskData } from '../task/task.component';
+// import { mapTaskData } from '../task/task.component';
 @Component({
   encapsulation: ViewEncapsulation.None,
   selector: 'app-process',

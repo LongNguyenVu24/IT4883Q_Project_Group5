@@ -26,24 +26,26 @@ export interface Task {
   taskStatus: boolean;
   repeat: boolean;
   parent?: string | number;
+  completed: boolean;
 }
 
 // Mapping function
-export function mapTaskData(data: any[]): Task[] {
-  return data.map((item: any) => {
-    return {
-      id: item.id,
-      taskID: item.taskId,
-      taskName: item.taskName,
-      taskDiscription: item.taskDiscription,
-      startDate: item.startDate,
-      endDate: item.endDate,
-      taskPriority: item.taskPriority,
-      taskStatus: item.taskStatus,
-      repeat: item.repeat
-    };
-  });
-}
+// export function mapTaskData(data: any[]): Task[] {
+//   return data.map((item: any) => {
+//     return {
+//       id: item.id,
+//       taskID: item.taskId,
+//       taskName: item.taskName,
+//       taskDiscription: item.taskDiscription,
+//       startDate: item.startDate,
+//       endDate: item.endDate,
+//       taskPriority: item.taskPriority,
+//       taskStatus: item.taskStatus,
+//       repeat: item.repeat
+//       completed: item.completed || false
+//     };
+//   });
+// }
 
 @Component({
   selector: 'app-task',
@@ -73,7 +75,9 @@ export class TaskComponent implements OnInit{
   // }
   checked = false;
   imchecked = false;
-  
+  moveToCompleted(task: any) {
+    task.completed = !task.completed;
+  }
   @Input() searchQuery: string = '';
   
   tasks: Task[] = [];
@@ -104,9 +108,9 @@ export class TaskComponent implements OnInit{
       (error) => {
         console.error('Error fetching tasks:', error);
       }
-    );
-
+    ); 
   }
+  
 //  async saveTask() {
 //   console.log(1);
   
