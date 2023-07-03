@@ -25,6 +25,7 @@ export interface Task {
   taskStatus: boolean;
   repeat: boolean;
 }
+
 @Component({
   selector: 'app-task',
   templateUrl: './task.component.html',
@@ -61,8 +62,8 @@ export class TaskComponent implements OnInit{
   filteredTasks: Task[] = [];
   constructor(
     private taskService: TaskService,
-    private dialogModalContentComponent: DialogModalContentComponent
-    ,private cdr: ChangeDetectorRef,
+    private dialogModalContentComponent: DialogModalContentComponent,
+    private cdr: ChangeDetectorRef,
     public dialog: MatDialog
     // private templateRef:    TemplateRef<any>,
     // private viewContainer:  ViewContainerRef
