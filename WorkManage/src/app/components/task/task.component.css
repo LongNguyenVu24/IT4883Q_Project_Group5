@@ -16,12 +16,15 @@
   }
   
   .icon-container {
-    display: inline-block;
-    margin-left: 80%;
+    /* display: inline-block; */
+    margin-left: 50%;
     font-size: 29px;
     cursor: pointer;
     color: #ccc;
     border-style: #ccc;
+    right: 35px;
+    position: absolute;
+    z-index: 1;
   }
   
   .icon-checkbox:checked + .icon-container {
@@ -30,8 +33,10 @@
   }
   mat-card mat-list-item{
     padding: 16px 0;
+          margin-bottom: 15px;
   }
   
+  mat-list .task-list{}
   @keyframes pop_42 {
     0% {
       transform: scale(1);
@@ -45,5 +50,4 @@
       transform: scale(1);
     }
   }
-
 

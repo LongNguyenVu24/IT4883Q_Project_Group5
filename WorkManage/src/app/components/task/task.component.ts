@@ -118,7 +118,7 @@ openDialog(): void {
     }
   });
 }
-//Longgay
+
 }
 // searchTasks(taskName?: string, startDate?: string, endDate?: string): Observable<TaskDTO[]> {
 //   let params = new HttpParams();
