@@ -16,6 +16,7 @@ import { ChangeDetectorRef } from '@angular/core';
   import {ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 export interface Task {
+  id: string | number;
   taskID: number;
   taskName: string;
   taskDiscription: string;
@@ -24,6 +25,24 @@ export interface Task {
   taskPriority: boolean;
   taskStatus: boolean;
   repeat: boolean;
+  parent?: string | number;
+}
+
+// Mapping function
+export function mapTaskData(data: any[]): Task[] {
+  return data.map((item: any) => {
+    return {
+      id: item.id,
+      taskID: item.taskId,
+      taskName: item.taskName,
+      taskDiscription: item.taskDiscription,
+      startDate: item.startDate,
+      endDate: item.endDate,
+      taskPriority: item.taskPriority,
+      taskStatus: item.taskStatus,
+      repeat: item.repeat
+    };
+  });
 }
 
 @Component({
@@ -62,8 +81,6 @@ export class TaskComponent implements OnInit{
   filteredTasks: Task[] = [];
   constructor(
     private taskService: TaskService,
-    private dialogModalContentComponent: DialogModalContentComponent,
-    private cdr: ChangeDetectorRef,
     public dialog: MatDialog
     // private templateRef:    TemplateRef<any>,
     // private viewContainer:  ViewContainerRef
