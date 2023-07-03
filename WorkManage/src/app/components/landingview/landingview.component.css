@@ -1,9 +1,17 @@
 .title{
     width: 1094px;
+    position: sticky;
+    z-index: 999;
 }
 
 .header-land {
     display: flex;
     justify-content: space-between;
     align-items: center;
+}
+
+app-task{
+    &:focus{
+        transform: scale(0.95);
+    }
 }
