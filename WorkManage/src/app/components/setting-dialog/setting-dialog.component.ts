@@ -14,4 +14,11 @@ export class SettingDialogComponent {
   closeDialog() {
     this.dialogRef.close();
   }
+  exportData() {
+    // Code to export data
+  }
+  
+  importData() {
+    // Code to import data
+  }
 }
