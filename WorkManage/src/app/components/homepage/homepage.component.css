@@ -80,7 +80,10 @@ mat-sidenav-content{
     width: 459px;
     height: 497px;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    
+    &#hello{
+      justify-content: center;
+      align-items: center;
+    }
   } 
 /**/
