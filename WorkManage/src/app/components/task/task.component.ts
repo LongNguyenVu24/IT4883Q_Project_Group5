@@ -7,16 +7,16 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
 import { HttpClient } from '@angular/common/http';
-import {TaskService} from './task.service';
+import { TaskService } from './task.service';
 import { DialogModalContentComponent } from '../dialog-modal-content/dialog-modal-content.component';
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { ChangeDetectorRef } from '@angular/core';
 
-  import {ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
+import { ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+
 export interface Task {
-  id: string | number;
   taskID: number;
   taskName: string;
   taskDiscription: string;
@@ -26,26 +26,33 @@ export interface Task {
   taskStatus: boolean;
   repeat: boolean;
   parent?: string | number;
-  completed: boolean;
 }
 
 // Mapping function
-// export function mapTaskData(data: any[]): Task[] {
-//   return data.map((item: any) => {
-//     return {
-//       id: item.id,
-//       taskID: item.taskId,
-//       taskName: item.taskName,
-//       taskDiscription: item.taskDiscription,
-//       startDate: item.startDate,
-//       endDate: item.endDate,
-//       taskPriority: item.taskPriority,
-//       taskStatus: item.taskStatus,
-//       repeat: item.repeat
-//       completed: item.completed || false
-//     };
-//   });
-// }
+export function mapTaskData(data: Task[]): any[] {
+  return data.map((item: Task) => {
+    return {
+      id: item.taskID,
+      text: item.taskName,
+      start_date: new Date(item.startDate),
+      end_date: new Date(item.endDate),
+      duration: calculateDuration(item.startDate, item.endDate),
+      progress: calculateProgress(item.taskStatus),
+      parent: item.parent
+    };
+  });
+}
+
+function calculateDuration(startDate: string, endDate: string): number {
+  const start = new Date(startDate);
+  const end = new Date(endDate);
+  const diffInDays = Math.ceil((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
+  return diffInDays + 1; // Adding 1 to include both start and end date
+}
+
+function calculateProgress(taskStatus: boolean): number {
+  return taskStatus ? 1 : 0;
+}
 
 @Component({
   selector: 'app-task',
