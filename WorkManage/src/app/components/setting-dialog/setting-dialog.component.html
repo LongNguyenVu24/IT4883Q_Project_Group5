@@ -27,16 +27,17 @@
         
 
         <label for="name">Name</label>
-        <input type="text" id="name" name="name" placeholder="Enter your name">
+        <input type="text" id="name" name="name" placeholder="Enter your name"  [(ngModel)]="newFullName">
         
         <label for="email">Email</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email">
+        <input type="email" id="email" name="email" placeholder="Enter your email" [(ngModel)]="email" required>
 
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <input type="password" id="password" name="password" [(ngModel)]="newPassword" placeholder="Enter your password">
         
         
       </div>
+     
       <!-- End: Account content -->
       
       <!-- Start: Preference content -->
@@ -131,7 +132,7 @@
        <!-- Cancel and Apply Buttons -->
        <mat-dialog-actions>
         <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-raised-button color="warn">Apply</button>
+        <button mat-raised-button color="warn"  (click)="changePassword()">Apply</button>
       </mat-dialog-actions>
     </div>
 
