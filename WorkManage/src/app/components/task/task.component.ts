@@ -25,23 +25,32 @@ export interface Task {
   taskPriority: boolean;
   taskStatus: boolean;
   repeat: boolean;
-  parent?: string | number;
+  parent: null;
 }
 
-// Mapping function
-export function mapTaskData(data: Task[]): any[] {
-  return data.map((item: Task) => {
-    return {
-      id: item.taskID,
-      text: item.taskName,
-      start_date: new Date(item.startDate),
-      end_date: new Date(item.endDate),
-      duration: calculateDuration(item.startDate, item.endDate),
-      progress: calculateProgress(item.taskStatus),
-      parent: item.parent
-    };
-  });
+interface GanttTask extends Task {
+  id: number;
+  text: string;
+  start_date: Date;
+  end_date: Date;
+  duration: number;
+  progress: number;
+  parent: null;
 }
+
+// export function mapTaskData(data: Task[]): GanttTask[] {
+//   return data.map((item: Task) => {
+//     return {
+//       id: item.taskID,
+//       text: item.taskName,
+//       start_date: new Date(item.startDate),
+//       end_date: new Date(item.endDate),
+//       duration: calculateDuration(item.startDate, item.endDate),
+//       progress: calculateProgress(item.taskStatus),
+//       parent: item.parent
+//     };
+//   });
+// }
 
 function calculateDuration(startDate: string, endDate: string): number {
   const start = new Date(startDate);
@@ -53,6 +62,7 @@ function calculateDuration(startDate: string, endDate: string): number {
 function calculateProgress(taskStatus: boolean): number {
   return taskStatus ? 1 : 0;
 }
+
 
 @Component({
   selector: 'app-task',

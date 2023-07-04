@@ -2,9 +2,9 @@ import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, AfterViewI
 import { HttpClient } from '@angular/common/http';
 // import { Chart  } from 'chart.js';
 import {  gantt } from 'dhtmlx-gantt';
-import { from } from 'rxjs';
+import { from, of } from 'rxjs';
 import { GanttService } from './process.service';
-import { Task,  mapTaskData } from '../task/task.component';
+// import { Task,  mapTaskData } from '../task/task.component';
 
 // import { mapTaskData } from '../task/task.component';
 @Component({
@@ -26,19 +26,25 @@ export class ProcessComponent implements OnInit  {
 
  ngOnInit() { 
  
-  this.fetchGanttData();
+  // this.fetchGanttData();
   // gantt.init(this.ganttContainer.nativeElement);
  }
 
 
- fetchGanttData(): void {
-  this.ganttService.getGanttChartData().subscribe((data: any) => { // Update the type to 'any'
-    gantt.config.xml_date = '%Y-%m-%d';
-    gantt.init(this.ganttContainer.nativeElement);
-    const tasks: any[] = mapTaskData(data);
-    gantt.parse({ data: tasks });
-  });
-}
+//  fetchGanttData(): void {
+//   this.ganttService.getGanttChartData().subscribe(
+//     (data: Task[]) => {
+//       gantt.config.xml_date = '%Y-%m-%d';
+//       gantt.init(this.ganttContainer.nativeElement);
+
+//       const tasks: GanttTask[] = mapTaskData(data);
+//       gantt.parse({ data: tasks });
+//     },
+//     (error) => {
+//       console.error('Error fetching Gantt chart data:', error);
+//     }
+//   );
+// }
 
 
 
