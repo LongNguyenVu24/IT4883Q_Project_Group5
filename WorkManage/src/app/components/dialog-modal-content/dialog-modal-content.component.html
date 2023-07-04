@@ -1,31 +1,28 @@
 <h3 mat-dialog-title>Add Task</h3>
 <mat-dialog-content class="mat-typography">
-    <div >
+    <div>
+        <form #taskForm="ngForm">
+            <label for="taskName">Task Name:</label>
+            <input type="text" id="taskName" name="taskName" [(ngModel)]="taskName" required>
 
-        <label for="taskName">Task Name:</label>
-        <input type="text" id="taskName" [(ngModel)]="taskName" required>
+            <label for="taskDescription">Task Description:</label>
+            <textarea id="taskDescription" name="taskDescription" [(ngModel)]="taskDiscription" required></textarea>
 
-        <label for="taskDescription">Task Description:</label>
-        <textarea id="taskDescription" [(ngModel)]="taskDiscription" required></textarea>
+            <label for="startDate">Start Date:</label>
+            <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate" required>
 
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate" [(ngModel)]="startDate" required>
+            <label for="endDate">End Date:</label>
+            <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate" required>
 
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" [(ngModel)]="endDate" required>
+            <label for="taskPriority">Important:</label>
+            <input type="checkbox" id="taskPriority" name="taskPriority" [(ngModel)]="taskPriority">
 
-        <label for="taskPriority">Important:</label>
-        <input type="checkbox" id="taskPriority" [(ngModel)]="taskPriority">
+            <label for="repeat">Repeat:</label>
+            <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="repeat">
 
-        <!-- <label for="taskStatus">Task Status:</label>
-        <input type="checkbox" id="taskStatus" [(ngModel)]="taskStatus"> -->
-
-        <label for="repeat">Repeat:</label>
-        <input type="checkbox" id="repeat"  [(ngModel)]="repeat">
-
+        </form>
     </div>
-
     <mat-dialog-actions>
         <button mat-button mat-dialog-close>Cancel</button>
-        <button mat-raised-button (click)="saveTask()">Save Task</button>
+        <button mat-raised-button (click)="saveTask()" [disabled]="!taskForm.valid">Save Task</button>
     </mat-dialog-actions>
