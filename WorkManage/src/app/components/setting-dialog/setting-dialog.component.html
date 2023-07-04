@@ -66,7 +66,7 @@
       <!-- Start: Notification -->
       <div class="notification-content" *ngIf="activeTab === 'Notifications'">
         <label for="task-status">Reminders</label>
-        <mat-checkbox class="example-margin">On</mat-checkbox>
+        <mat-checkbox class="example-margin" color="var(--color-primary)">On</mat-checkbox>
 
         
         <label for="task-status">Task status</label>
@@ -79,8 +79,10 @@
       <!-- Start: Back up -->
       <div class="back-up" *ngIf="activeTab === 'Back Up'">
         <label for="export">Export</label>
+        <button mat-button (click)="exportData()">Export</button>
         <label for="import">Import</label>
-        <label for="sync">Sync</label>
+        <button mat-button (click)="importData()">Import</button>
+        
 
       </div>
       <!-- End: Back up -->
@@ -134,10 +136,6 @@
       </mat-dialog-actions>
     </div>
 
-    <!-- <mat-dialog-actions>
-      <button mat-button mat-dialog-close>Cancel</button>
-      <button mat-raised-button color="warn">Apply</button>
-    </mat-dialog-actions> -->
 
 
   </mat-dialog-content>
