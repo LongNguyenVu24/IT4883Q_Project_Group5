@@ -1,9 +1,11 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, AfterViewInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 // import { Chart  } from 'chart.js';
-import { Task, gantt } from 'dhtmlx-gantt';
+import {  gantt } from 'dhtmlx-gantt';
 import { from } from 'rxjs';
 import { GanttService } from './process.service';
+import { Task,  mapTaskData } from '../task/task.component';
+
 // import { mapTaskData } from '../task/task.component';
 @Component({
   encapsulation: ViewEncapsulation.None,
@@ -30,12 +32,11 @@ export class ProcessComponent implements OnInit  {
 
 
  fetchGanttData(): void {
-  this.ganttService.getGanttChartData().subscribe((data: Task[]) => {
-    // const tasks: Task[] = mapTaskData(data);
-    
+  this.ganttService.getGanttChartData().subscribe((data: any) => { // Update the type to 'any'
     gantt.config.xml_date = '%Y-%m-%d';
     gantt.init(this.ganttContainer.nativeElement);
-    gantt.parse({ data: data });
+    const tasks: any[] = mapTaskData(data);
+    gantt.parse({ data: tasks });
   });
 }
 
