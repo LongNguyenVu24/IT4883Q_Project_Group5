@@ -25,7 +25,9 @@ export class ProcessComponent implements OnInit  {
  taskData: any[] = [
   { id: 1, text: '1', start_date: '2023-07-01', duration: 5, progress: 1 },
   { id: 2, text: '2', start_date: '2023-07-02', duration: 4, progress: 1 },
-  
+  { id: 3, text: 'vua', start_date: '2023-07-02', duration: 4, progress: 1 },
+  { id: 4, text: 'vua2', start_date: '2023-07-02', duration: 4, progress: 1 },
+  // { id: 5, text: '3', start_date: '2023-07-02', duration: 4, progress: 1 },
 ];
 
 ngOnInit() {
