@@ -3,10 +3,18 @@
     margin: 0 auto;
   }
   
+
   label {
     display: block;
     margin-bottom: 5px;
-    font-weight: bold;
+    /* font-weight: bold; */
+
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #132039;
+    margin-bottom: 12px;
+
   }
   
   input[type="text"],
