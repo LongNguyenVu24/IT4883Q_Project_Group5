@@ -4,7 +4,7 @@
 *{
     font-family: 'sans-serif';
     background-color: #fafafa;
-    width: 359px;
+    /* width: 359px; */
     background: none;
 } 
 
@@ -15,7 +15,7 @@ mat-icon{
 }
 
 .func-ite{
-    .side-button{
+    .side-button {
         justify-content:left;
         width: 70%;
         position:relative;
@@ -62,14 +62,28 @@ mat-divider{
 
 .list{
     padding-top: 360px;
-    align-items: baseline;
+    /* align-items: baseline; */
+    display: flex;
+    justify-content: center;
 }
 
+button .fa-plus {
+    font-size: 40px;
+    color: #374957;
+    margin-right: 20px;
+    font-weight: 900;
+  }
 
+  .add-list-btn {
+    width: 70%;
+    display: flex;
+    align-items: center;
+  }
 
-.side-button fa-light fa-plus{
-    background: none;
-    font-size: 29px;
-    height: 29px;
-    width: 29px;
+.side-button .add-list-text {
+    color: #6D6363;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'Noto Sans', sans-serif;
+    
 }

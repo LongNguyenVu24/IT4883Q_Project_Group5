@@ -37,10 +37,47 @@
                 <button mat-menu-item ><img src="assets/image/logout.png" alt="">Log out</button>
             </mat-menu>
 
-            <mat-menu #hello2="matMenu">
-                <button mat-menu-item>vua banh dau xanh </button>
+            <mat-menu class="noti-pop-up" #hello2="matMenu">
+                <div class="header">
+                    <h1 class="name">Notifications</h1>
+                    <a href="">Clear All</a>
+                </div>
                 
-                <button mat-menu-item>vua ha loi</button>
+                <button mat-menu-item>
+                    <div class="noti-text">
+                        <span class="label">Haven't done&nbsp;<b>04</b>&nbsp;tasks, check it...</span>
+                        <span class="date">Yesterday - Distributed App</span>
+                    </div>
+
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+                <button mat-menu-item>
+                    <div class="noti-text">
+                        <span class="label">Haven't done&nbsp;<b>04</b>&nbsp;tasks, check it...</span>
+                        <span class="date">Yesterday - Distributed App</span>
+                    </div>
+
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+                <button mat-menu-item>
+                    <div class="noti-text">
+                        <span class="label">Haven't done&nbsp;<b>04</b>&nbsp;tasks, check it...</span>
+                        <span class="date">Yesterday - Distributed App</span>
+                    </div>
+
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
+
+                <button mat-menu-item>
+                    <div class="noti-text">
+                        <span class="label">Haven't done&nbsp;<b>04</b>&nbsp;tasks, check it...</span>
+                        <span class="date">Yesterday - Distributed App</span>
+                    </div>
+
+                    <i class="fa-solid fa-ellipsis"></i>
+                </button>
             </mat-menu>
         </div>
 
