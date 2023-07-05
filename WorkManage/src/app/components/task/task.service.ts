@@ -38,4 +38,7 @@ export class TaskService {
   getImportantTasks() {
     return this.http.get(`${this.baseUrl}/getImportantTasks`);
   }
+  getCompletedTasks() {
+    return this.http.get(`${this.baseUrl}/getAllCompletedTasks`);
+  }
 }
