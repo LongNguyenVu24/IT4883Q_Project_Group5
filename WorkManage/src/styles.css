@@ -141,3 +141,31 @@ body > app-root > app-homepage > mat-sidenav-container > mat-sidenav > div > app
     margin-left: auto;
     line-height: 100%;
 }
+
+/* Gantt chart */
+body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > div > app-process > div > div > div > div.gantt_layout_cell.timeline_cell.gantt_layout_outer_scroll.gantt_layout_outer_scroll_vertical.gantt_layout_outer_scroll.gantt_layout_outer_scroll_horizontal > div > div > div.gantt_task_scale > div > div {
+    color: #132039;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > div > app-process > div > div > div > div.gantt_layout_cell.grid_cell.gantt_layout_outer_scroll.gantt_layout_outer_scroll_vertical.gantt_layout_outer_scroll.gantt_layout_outer_scroll_horizontal.gantt_layout_cell_border_right > div > div > div.gantt_grid_scale > div {
+    color: #132039;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.gantt_tree_content,
+.gantt_task_content {
+    color: #132039;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* .gantt_task_content {
+    background-color: #2DB6F5;
+}
+
+body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > div > app-process > div > div > div > div.gantt_layout_cell.timeline_cell.gantt_layout_outer_scroll.gantt_layout_outer_scroll_vertical.gantt_layout_outer_scroll.gantt_layout_outer_scroll_horizontal > div > div > div.gantt_data_area > div.gantt_bars_area > div {
+    border: 1px solid #2DB6F5;
+} */
+
