@@ -25,6 +25,7 @@ export class DialogModalContentComponent{
   taskPriority: boolean = false;
   taskStatus: boolean = false;
   repeat: boolean = false;
+  parent: string = '';
   @Output() taskAdded = new EventEmitter();
   constructor(private http: HttpClient,private cdr:ChangeDetectorRef,private taskService: TaskService, private dialogRef: MatDialogRef<DialogModalContentComponent>) {}
 
@@ -37,6 +38,7 @@ export class DialogModalContentComponent{
       taskPriority: this.taskPriority,
       taskStatus: this.taskStatus,
       repeat: this.repeat,
+      parent: this.parent
     };
 // console.log(taskSaveDTO);
     let resust = await this.taskService.saveTask(taskSaveDTO).toPromise();
@@ -44,6 +46,8 @@ export class DialogModalContentComponent{
       this.dialogRef.close(true);
     }
   }
+
+ 
 
 
 }

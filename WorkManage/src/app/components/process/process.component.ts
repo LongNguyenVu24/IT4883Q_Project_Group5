@@ -1,10 +1,12 @@
 import { Component, OnInit, ViewChild, ElementRef, ViewEncapsulation, AfterViewInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
 // import { Chart  } from 'chart.js';
 import {  gantt } from 'dhtmlx-gantt';
-import { from } from 'rxjs';
-import { GanttService } from './process.service';
-import { Task,  mapTaskData } from '../task/task.component';
+
+
+
+// import { Task } from 'dhtmlx-gantt';
+
 
 // import { mapTaskData } from '../task/task.component';
 @Component({
@@ -12,33 +14,43 @@ import { Task,  mapTaskData } from '../task/task.component';
   selector: 'app-process',
   // templateUrl: './process.component.html', <div #gantt_here class='gantt-chart'></div>, <div id="ganttContainer"></div>
   template: `
-  <div #gantt_here class='gantt-chart'></div>
+  <div #ganttContainer class="gantt-chart"></div>
   `,
   styleUrls: ['./process.component.css']
 })
 export class ProcessComponent implements OnInit  {
-  constructor(private ganttService: GanttService) { }
+  constructor() { }
  //new 
- @ViewChild('gantt_here', { static:true}) ganttContainer!: ElementRef;
+ @ViewChild('ganttContainer', { static: true }) ganttContainer!: ElementRef;
+ taskData: any[] = [
+  { id: 1, text: '1', start_date: '2023-07-01', duration: 5, progress: 1 },
+  { id: 2, text: '2', start_date: '2023-07-02', duration: 4, progress: 1 },
+  
+];
 
- 
- 
-
- ngOnInit() { 
- 
-  this.fetchGanttData();
-  // gantt.init(this.ganttContainer.nativeElement);
- }
-
-
- fetchGanttData(): void {
-  this.ganttService.getGanttChartData().subscribe((data: any) => { // Update the type to 'any'
-    gantt.config.xml_date = '%Y-%m-%d';
-    gantt.init(this.ganttContainer.nativeElement);
-    const tasks: any[] = mapTaskData(data);
-    gantt.parse({ data: tasks });
-  });
+ngOnInit() {
+  gantt.config.xml_date = '%Y-%m-%d';
+  gantt.init(this.ganttContainer.nativeElement);
+  gantt.parse({ data: this.taskData });
 }
+
+ 
+
+
+//  fetchGanttData(): void {
+//   this.ganttService.getGanttChartData().subscribe(data => {
+//       gantt.config.xml_date = '%Y-%m-%d';
+//       gantt.init(this.ganttContainer.nativeElement);
+
+//      const tasks: Gantz[] = mapTaskData(data);
+//       gantt.parse({ data: tasks });
+//      },
+//      (error) => {
+//       console.error('Error fetching Gantt chart data:', error);
+//      }
+//    );
+//  }
+
 
 
 
