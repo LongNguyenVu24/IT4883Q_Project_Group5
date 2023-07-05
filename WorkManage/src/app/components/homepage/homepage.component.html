@@ -27,12 +27,14 @@
             [matMenuTriggerFor]="hello">
                 <mat-icon >perm_identity</mat-icon>
             </button>
-            <mat-menu #hello="matMenu">
-                <button mat-menu-item (click)="openDialog()">Account</button>
-                <button mat-menu-item (click)="openDialog()">Preference</button>
-                <button mat-menu-item (click)="openDialog()">About us</button>
-                <button mat-menu-item (click)="openDialog()">Help & Support</button>
-                <button mat-menu-item >Log out</button>
+            <mat-menu class="setting-popup" #hello="matMenu">
+                <h2>Long V.Nguyen</h2>
+                <h3>@long.nv207687</h3>
+                <button mat-menu-item (click)="openDialog()"><img src="assets/image/avatar.png" alt="">Account</button>
+                <button mat-menu-item (click)="openDialog()"><img src="assets/image/preference.png" alt="">Preference</button>
+                <button mat-menu-item (click)="openDialog()"><img src="assets/image/aboutus.png" alt="">About us</button>
+                <button mat-menu-item (click)="openDialog()"><img src="assets/image/question.png" alt="">Help & Support</button>
+                <button mat-menu-item ><img src="assets/image/logout.png" alt="">Log out</button>
             </mat-menu>
 
             <mat-menu #hello2="matMenu">
