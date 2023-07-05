@@ -80,6 +80,7 @@
       <div class="back-up" *ngIf="activeTab === 'Back Up'">
         <label for="export">Export</label>
         <button mat-button (click)="exportData()">Export</button>
+        <label for="export">Link: {{this.link}}</label>
         <label for="import">Import</label>
         <button mat-button (click)="importData()">Import</button>
         

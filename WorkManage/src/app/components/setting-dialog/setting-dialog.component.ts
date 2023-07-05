@@ -15,7 +15,7 @@ export class SettingDialogComponent {
   email: string = '';
   newPassword: string = '';
   newFullName: string = ''; 
-
+  link:string='';
   constructor(public dialogRef: MatDialogRef<SettingDialogComponent>,private http: HttpClient) { }
   async changePassword() {
     console.log(1)
@@ -43,8 +43,24 @@ export class SettingDialogComponent {
   closeDialog() {
     this.dialogRef.close();
   }
-  exportData() {
+  export(){
+    return  this.http.get('http://localhost:8003/api/task/export');
+  }
+   async exportData() {
     // Code to export data
+let res =  await this.export().subscribe(
+    (response) => {
+      console.log(response)
+      this.link =response.toString()
+    },
+    (error) => {
+
+      console.log(this.link);
+      console.error('Error fetching tasks:', error);
+    }
+  )
+console.log(res)
+  this.dialogRef.close();
   }
   
   importData() {
