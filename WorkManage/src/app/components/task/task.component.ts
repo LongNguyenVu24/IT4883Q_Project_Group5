@@ -190,7 +190,7 @@ deleteTask(taskId: number) {
   const confirmed = confirm('Are you sure you want to delete this task?');
   if (confirmed) {
     this.taskService.deleteTask(taskId).subscribe(
-      () => {
+      (r) => {
         console.log('Task deleted successfully!');
         this.getAllTasks(); // Fetch updated task list
       },

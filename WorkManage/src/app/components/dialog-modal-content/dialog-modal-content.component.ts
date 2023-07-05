@@ -18,7 +18,7 @@ import { MatButtonModule } from '@angular/material/button';
 })
 
 export class DialogModalContentComponent{
-  taskName: string = ''; // Assign a default value or initialize in the constructor
+  taskName: string = ''; 
   taskDiscription: string = '';
   startDate: string = '';
   endDate: string = '';

@@ -20,8 +20,8 @@ export class TaskService {
     return this.http.get(`${this.baseUrl}/getAllTasks`);
   }
 
-  updateTask(taskUpdateDTO: any) {
-    return this.http.get(`${this.baseUrl}/update`, taskUpdateDTO);
+  updateTask(taskUpdateDTO: any): Observable<any> {
+    return this.http.put(`${this.baseUrl}/update/${taskUpdateDTO.taskId}`, taskUpdateDTO);
   }
 
   deleteTask(taskId: number) {
