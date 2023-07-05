@@ -77,9 +77,12 @@ body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > d
 
 /* Create Task title */
 #mat-mdc-dialog-title-0 {
-    height: 70px;
+    height: 50px;
     font-size: 18px;
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     color: #132039;
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
+
 }

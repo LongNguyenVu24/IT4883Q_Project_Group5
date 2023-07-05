@@ -8,17 +8,29 @@
             <label for="taskDescription">Task Description:</label>
             <textarea id="taskDescription" name="taskDescription" [(ngModel)]="taskDiscription" required></textarea>
 
-            <label for="startDate">Start Date:</label>
-            <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate" required>
-
-            <label for="endDate">End Date:</label>
-            <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate" required>
-
-            <label for="taskPriority">Important:</label>
-            <input type="checkbox" id="taskPriority" name="taskPriority" [(ngModel)]="taskPriority">
-
-            <label for="repeat">Repeat:</label>
-            <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="repeat">
+            <div class="date-form">
+                <div class="start">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" [(ngModel)]="startDate" required>
+                </div>
+                
+                <div class="end">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" name="endDate" [(ngModel)]="endDate" required>
+                </div>
+                
+            </div>
+            
+            <div class="priority">
+                <label class="priority-label" for="taskPriority">Important:</label>
+                <input type="checkbox" id="taskPriority" name="taskPriority" [(ngModel)]="taskPriority">
+            </div>
+            
+            <div class="repeat">
+                <label class="repeat-label" for="repeat">Repeat:</label>
+                <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="repeat">
+            </div>
+            
             <label for="parent">Parent:</label>
             <textarea name="parent" id="parent" name="parent" [(ngModel)]="parent" required></textarea>
         </form>
