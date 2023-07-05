@@ -95,7 +95,8 @@ export class TaskComponent implements OnInit{
   filteredTasks: Task[] = [];
   constructor(
     private taskService: TaskService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private cdr: ChangeDetectorRef
 
   ) {}
 
@@ -108,6 +109,7 @@ export class TaskComponent implements OnInit{
     this.taskService.getAllTasks().subscribe(
       (response: any) => {
         this.tasks = response;
+        this.cdr.detectChanges();
       },
       (error) => {
         console.error('Error fetching tasks:', error);
@@ -117,20 +119,20 @@ export class TaskComponent implements OnInit{
   
 
 
-filterTasks(): void {
-  if (this.searchQuery) {
-    this.filteredTasks = this.tasks.filter((task: Task) => {
-      return task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase());
-    });
-  } else {
-    this.filteredTasks = this.tasks;
-  }
-}
+// filterTasks(): void {
+//   if (this.searchQuery) {
+//     this.filteredTasks = this.tasks.filter((task: Task) => {
+//       return task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase());
+//     });
+//   } else {
+//     this.filteredTasks = this.tasks;
+//   }
+// }
 
-clearSearch(): void {
-  this.searchQuery = '';
-  this.filterTasks();
-}
+// clearSearch(): void {
+//   this.searchQuery = '';
+//   this.filterTasks();
+// }
 
 openDialog(): void {
   const dialogRef = this.dialog.open(DialogModalContentComponent, {
@@ -143,54 +145,56 @@ openDialog(): void {
   });
 }
 
-// editTask(task: Task) {
-//   const dialogRef = this.dialog.open(DialogModalContentComponent, {
-//     data: task
-//   });
+editTask(task: Task) {
+  const dialogRef = this.dialog.open(DialogModalContentComponent, {
+    data: task
+  });
 
-//   dialogRef.afterClosed().subscribe(updatedTask => {
-//     if (updatedTask) {
-//       const taskUpdateDTO = {
-//         taskId: updatedTask.taskID,
-//         taskName: updatedTask.taskName,
-//         taskDiscription: updatedTask.taskDiscription,
-//         startDate: updatedTask.startDate,
-//         endDate: updatedTask.endDate,
-//         taskPriority: updatedTask.taskPriority,
-//         taskStatus: updatedTask.taskStatus,
-//         repeat: updatedTask.repeat,
-//         parent: updatedTask.parent
-//       };
+  dialogRef.afterClosed().subscribe(updatedTask => {
+    if (updatedTask) {
+      const taskUpdateDTO = {
+        taskId: updatedTask.taskID,
+        taskName: updatedTask.taskName,
+        taskDiscription: updatedTask.taskDiscription,
+        startDate: updatedTask.startDate,
+        endDate: updatedTask.endDate,
+        taskPriority: updatedTask.taskPriority,
+        taskStatus: updatedTask.taskStatus,
+        repeat: updatedTask.repeat,
+        parent: updatedTask.parent
+      };
 
-//       this.taskService.updateTask(taskUpdateDTO).subscribe(
-//         (taskId: string) => {
-//           console.log('Task updated successfully!');
-//           // Handle the updated task ID if needed
-//         },
-//         (error) => {
-//           console.error('Error updating task:', error);
-//           // Handle error, e.g., show an error message
-//         }
-//       );
-//     }
-//   });
-// }
+      this.taskService.updateTask(taskUpdateDTO).subscribe(
+        () => {
+          console.log('Task updated successfully!');
+          this.getAllTasks(); // Fetch updated task list
+        },
+        (error) => {
+          console.error('Error updating task:', error);
+          
+        }
+      );
+    }
+  });
+}
+
+deleteTask(taskId: number) {
+  const confirmed = confirm('Are you sure you want to delete this task?');
+  if (confirmed) {
+    this.taskService.deleteTask(taskId).subscribe(
+      () => {
+        console.log('Task deleted successfully!');
+        this.getAllTasks(); // Fetch updated task list
+      },
+      (error) => {
+        console.error('Error deleting task:', error);
+        // Handle error, e.g., show an error message
+      }
+    );
+  }
+}
 
 
 
-// deleteTask(taskId: number) {
-//   const confirmed = confirm('Are you sure you want to delete this task?');
-//   if (confirmed) {
-//     this.taskService.deleteTask(taskId).subscribe(
-//       () => {
-//         console.log('Task deleted successfully!');
-//       },
-//       (error) => {
-//         console.error('Error deleting task:', error);
-//         // Handle error, e.g., show an error message
-//       }
-//     );
-//   }
-// }
 
 }
