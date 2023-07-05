@@ -28,45 +28,30 @@
     </mat-card>
 </mat-list> 
 
-<!-- <mat-list>
-  <mat-card *ngFor="let task of tasks" class="task-item">
+<mat-list *ngFor="let task of filteredTasks" class="task-list">
+  <mat-card mat-list-item class="task-item">
     <mat-card-content>
       <section class="example-section">
-        <mat-checkbox class="example-margin" color="var(--color-primary)" (change)="moveToCompleted(task)">
-          {{ task.taskName }}
+        <mat-checkbox class="example-margin" color="var(--color-primary)" [(ngModel)]="task.taskStatus">
+          <span [ngClass]="{'task-completed': task.taskStatus}">{{ task.taskName }}</span>
         </mat-checkbox>
-        <div *ngIf="task.completed">
-          
-          Task is completed.
-        </div>
+        <input type="checkbox" id="my-icon-checkbox" [(ngModel)]="task.taskPriority" class="icon-checkbox">
+        <label for="my-icon-checkbox" class="icon-container" [ngClass]="{'task-important': task.taskPriority}">
+          <i class="fas fa-star"></i>
+        </label>
       </section>
     </mat-card-content>
+    <mat-card-actions>
+      <button mat-button color="primary" (click)="editTask(task)">Edit</button>
+      <button mat-button color="warn" (click)="deleteTask(task.taskID)">Delete</button>
+    </mat-card-actions>
   </mat-card>
-</mat-list> -->
+</mat-list>
 
 
-  <!-- <ng-container *ngFor="let task of filteredTasks">
-    <mat-card class="result">
-      <mat-card-content>
-        <section class="task-details">
-          <mat-checkbox [(ngModel)]="task.taskName" color="primary">
-            {{task.taskName}}
-          </mat-checkbox>
-          <input type="checkbox" id="my-icon-checkbox" class="icon-checkbox">
-          <label for="my-icon-checkbox" class="icon-container">
-            {{task.taskPriority}}
-            <i class="fas fa-star"></i>
-          </label>
-        </section>
-        <section class="task-description">
-          <p><strong>Task Description:</strong> {{ task.taskDiscription }}</p>
-          <p><strong>Start Date:</strong> {{ task.startDate }}</p>
-          <p><strong>End Date:</strong> {{ task.endDate }}</p>
-          <p><strong>Repeat:</strong> {{ task.repeat }}</p>
-        </section>
-      </mat-card-content>
-    </mat-card>
-  </ng-container> -->
+
+
+
   <button mat-button (click)="openDialog()">Add Task</button>
 
 

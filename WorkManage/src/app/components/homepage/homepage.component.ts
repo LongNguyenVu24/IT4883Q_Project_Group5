@@ -17,7 +17,7 @@ export class HomepageComponent  {
   searchQuery: string = '';
   // searchResults: TaskDTO[] = [];
   @ViewChild(TaskComponent, { static: false }) taskComponent!: TaskComponent;
-  constructor(public dialog: MatDialog, private taskService: TaskService) { }
+  constructor(public dialog: MatDialog, private taskService: TaskService, private searchService: TaskSearchService) { }
 
 
 
@@ -27,17 +27,8 @@ export class HomepageComponent  {
     });
 }
 
-searchTasks(): void {
-  // Call the search API endpoint in your TaskService
-  this.taskService.searchTasks(this.searchQuery).subscribe(
-    (response: Task[]) => {
-      // Pass the search results to the TaskComponent
-      this.taskComponent.filteredTasks = response;
-    },
-    (error) => {
-      console.error('Error searching tasks:', error);
-    }
-  );
+onSearchQueryChange(): void {
+  this.searchService.updateSearchQuery(this.searchQuery);
 }
 }
 

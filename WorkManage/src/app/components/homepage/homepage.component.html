@@ -6,11 +6,9 @@
             <mat-icon (click)="sidebar.toggle()">home</mat-icon>
             <div class="search-box">
                 <div>
-                    <input type="text" [(ngModel)]="searchQuery" (input)="searchTasks()" placeholder="Search...">
-                  </div>
-                  <!-- <app-task [searchQuery]="searchQuery"></app-task> -->
-                  <mat-icon>search</mat-icon>
-                
+                  <input type="text" [(ngModel)]="searchQuery" (ngModelChange)="onSearchQueryChange()" placeholder="Search...">
+                </div>
+                <mat-icon>search</mat-icon>
               </div>
         </div>
 

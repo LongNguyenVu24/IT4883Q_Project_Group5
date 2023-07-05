@@ -15,6 +15,7 @@ import { ChangeDetectorRef } from '@angular/core';
 
 import { ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { TaskSearchService } from './task-search.service';
 
 export interface Task {
   taskID: number;
@@ -96,12 +97,14 @@ export class TaskComponent implements OnInit{
   constructor(
     private taskService: TaskService,
     public dialog: MatDialog,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private searchService: TaskSearchService
 
   ) {}
 
   ngOnInit(): void {
     this.getAllTasks();
+    this.subscribeToSearchQuery();
    
   }
 
@@ -109,7 +112,9 @@ export class TaskComponent implements OnInit{
     this.taskService.getAllTasks().subscribe(
       (response: any) => {
         this.tasks = response;
+       
         this.cdr.detectChanges();
+        
       },
       (error) => {
         console.error('Error fetching tasks:', error);
@@ -119,20 +124,23 @@ export class TaskComponent implements OnInit{
   
 
 
-// filterTasks(): void {
-//   if (this.searchQuery) {
-//     this.filteredTasks = this.tasks.filter((task: Task) => {
-//       return task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase());
-//     });
-//   } else {
-//     this.filteredTasks = this.tasks;
-//   }
-// }
+  subscribeToSearchQuery(): void {
+    this.searchService.searchQuery$.subscribe((query) => {
+      this.searchQuery = query;
+      this.filterTasks();
+    });
+  }
 
-// clearSearch(): void {
-//   this.searchQuery = '';
-//   this.filterTasks();
-// }
+  filterTasks(): void {
+    if (this.searchQuery) {
+      this.filteredTasks = this.tasks.filter((task: Task) => {
+        return task.taskName.toLowerCase().includes(this.searchQuery.toLowerCase());
+      });
+    } else {
+      this.filteredTasks = this.tasks;
+    }
+  }
+  
 
 openDialog(): void {
   const dialogRef = this.dialog.open(DialogModalContentComponent, {
