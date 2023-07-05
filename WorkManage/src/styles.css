@@ -40,22 +40,27 @@ body {
 
 #mat-menu-panel-0 > div {
     width: 280px;
-    height: 497px;
+    height: auto;
     background: #FFFFFF;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     border-radius: 0px 0px 15px 15px;
-    padding: 32px 42px 42px;
+    padding: 22px 32px 32px;
   }
 
   #mat-menu-panel-0 > div > button {
-    width: 200px;
-    height: 72px;
+    width: 100%;
+    height: 60px;
     background: rgba(217, 217, 217, 0.2);
     border-radius: 10px;
     display: flex;
     align-items: center;
     margin-top: 3px;
     padding: 24px;
+
+  }
+
+  #mat-menu-panel-0 > div > button:hover {
+    background: rgba(217, 217, 217, 0.5);
 
   }
 
@@ -118,6 +123,10 @@ body > app-root > app-homepage > mat-sidenav-container > mat-sidenav > div > app
     margin-bottom: 5px;
 }
 
+#mat-menu-panel-1 > div > button:hover {
+    background: rgba(217, 217, 217, 0.5);
+}
+
 #mat-menu-panel-1 > div > div {
     display: flex;
     align-items: center;
@@ -159,6 +168,29 @@ body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > d
 .gantt_task_content {
     color: #132039;
     font-family: 'Montserrat', sans-serif;
+}
+
+body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > div > app-process > div > div {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+}
+
+body > div.gantt_cal_light > div.gantt_cal_ltitle > span.gantt_time {
+    color: #132039;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body > div.gantt_cal_light > div.gantt_btn_set.gantt_left_btn_set.gantt_save_btn_set > div,
+body > div.gantt_cal_light > div.gantt_btn_set.gantt_left_btn_set.gantt_cancel_btn_set > div,
+body > div.gantt_cal_light > div.gantt_btn_set.gantt_left_btn_set.gantt_delete_btn_set > div,
+body > div.gantt_cal_light > div.gantt_cal_larea > div.gantt_section_time > div.gantt_duration > span,
+body > div.gantt_cal_light > div.gantt_cal_larea > div.gantt_section_time > div.gantt_duration,
+#input_1688582760607,
+body > div.gantt_cal_light > div.gantt_cal_larea > div.gantt_section_time > div.gantt_time_selects > select,
+#input_1688582830090,
+#area_1688582860332 > label {
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 /* .gantt_task_content {
