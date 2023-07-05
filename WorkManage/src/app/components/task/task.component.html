@@ -2,28 +2,8 @@
   integrity="sha384-6s1tX7d6i4oK+sjd0nHPTBf3wDGdJN6+0oYRjO6a4D5WKhbY6aZRyJL2Xr1z+6Ks" crossorigin="anonymous">
 
 
-  <mat-list *ngFor="let task of tasks" class="task-list">
-    <mat-card mat-list-item class="task-item" (contextmenu)="onRightClick($event, task)">
-      <mat-card-content>
-        <section class="example-section">
-          <mat-checkbox class="example-margin" color="var(--color-primary)" [(ngModel)]="task.taskStatus">
-            <span [ngClass]="{'task-completed': task.taskStatus}">{{ task.taskName }}</span>
-          </mat-checkbox>
-          <input type="checkbox" id="my-icon-checkbox" [(ngModel)]="task.taskPriority" class="icon-checkbox">
-          <label for="my-icon-checkbox" class="icon-container" [ngClass]="{'task-important': task.taskPriority}">
-            <i class="fas fa-star"></i>
-          </label>
-        </section>
-      </mat-card-content>
-      <mat-card-actions *ngIf="contextMenuTask === task">
-        <button mat-button color="primary" (click)="editTask(task)">Edit</button>
-        <button mat-button color="warn" (click)="deleteTask(task.taskID)">Delete</button>
-      </mat-card-actions>
-    </mat-card>
-  </mat-list>
   
-  <!-- Add a backdrop to close the context menu when clicked outside -->
-  <div class="backdrop" (click)="closeContextMenu()"></div>
+
   
   
 
@@ -48,7 +28,8 @@
 </mat-list>
 
 
-
+  <!-- Add a backdrop to close the context menu when clicked outside -->
+  <div class="backdrop" (click)="closeContextMenu()"></div>
 
 
 
