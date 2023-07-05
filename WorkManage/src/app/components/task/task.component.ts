@@ -12,7 +12,7 @@ import { DialogModalContentComponent } from '../dialog-modal-content/dialog-moda
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { ChangeDetectorRef } from '@angular/core';
-
+import { EditdialogComponent } from '../editdialog/editdialog.component';
 import { ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TaskSearchService } from './task-search.service';
@@ -167,14 +167,14 @@ export class TaskComponent implements OnInit {
   }
 
   editTask(task: Task) {
-    const dialogRef = this.dialog.open(DialogModalContentComponent, {
+    const dialogRef = this.dialog.open(EditdialogComponent, {
       data: task
     });
-
+  
     dialogRef.afterClosed().subscribe(updatedTask => {
       if (updatedTask) {
         const taskUpdateDTO = {
-          taskId: updatedTask.taskID,
+          taskID: updatedTask.taskID,
           taskName: updatedTask.taskName,
           taskDiscription: updatedTask.taskDiscription,
           startDate: updatedTask.startDate,
@@ -184,7 +184,7 @@ export class TaskComponent implements OnInit {
           repeat: updatedTask.repeat,
           parent: updatedTask.parent
         };
-
+  
         this.taskService.updateTask(taskUpdateDTO).subscribe(
           () => {
             console.log('Task updated successfully!');
@@ -192,7 +192,6 @@ export class TaskComponent implements OnInit {
           },
           (error) => {
             console.error('Error updating task:', error);
-
           }
         );
       }
