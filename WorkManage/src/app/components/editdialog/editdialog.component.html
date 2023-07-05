@@ -1,39 +1,45 @@
-<h2 mat-dialog-title>Edit Task</h2>
-<div mat-dialog-content>
-  <form>
-    <mat-form-field>
-      <input matInput placeholder="Task Name" [(ngModel)]="updatedTask.taskName" name="taskName">
-    </mat-form-field>
+<h3 mat-dialog-title>Edit Task</h3>
+<mat-dialog-content class="mat-typography">
+  <div>
+    <form #taskForm="ngForm">
 
-    <mat-form-field>
-      <textarea matInput placeholder="Task Description" [(ngModel)]="updatedTask.taskDiscription"
+      <label for="taskName">Task Name:</label>
+      <input type="text" id="taskName" matInput placeholder="Task Name" [(ngModel)]="updatedTask.taskName"
+        name="taskName">
+
+
+
+      <label for="taskDescription">Task Description:</label>
+      <textarea id="taskDescription" matInput placeholder="Task Description" [(ngModel)]="updatedTask.taskDiscription"
         name="taskDescription"></textarea>
-    </mat-form-field>
 
-    <mat-form-field>
-      <label for="startDate">Start Date:</label>
-      <input type="date" id="startDate" name="startDate" [(ngModel)]="updatedTask.startDate" required>
-    </mat-form-field>
-
-    <mat-form-field>
-      <label for="endDate">End Date:</label>
-      <input type="date" id="endDate" name="endDate" [(ngModel)]="updatedTask.endDate" required>
-    </mat-form-field>
-
-    <label class="priority-label" for="taskPriority">Important:</label>
-    <input type="checkbox" id="taskPriority" name="taskPriority" [(ngModel)]="updatedTask.taskPriority">
-
-    <label class="repeat-label" for="repeat">Repeat:</label>
-    <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="updatedTask.repeat">
+      <div class="date-form">
+        <div class="start"> <label for="startDate">Start Date:</label>
+          <input type="date" id="startDate" name="startDate" [(ngModel)]="updatedTask.startDate" required>
+        </div>
+        <div class="end"> <label for="endDate">End Date:</label>
+          <input type="date" id="endDate" name="endDate" [(ngModel)]="updatedTask.endDate" required>
+        </div>
+      </div>
 
 
 
-    <mat-form-field>
+      <div class="priority"> <label class="priority-label" for="taskPriority">Important:</label>
+        <input type="checkbox" id="taskPriority" name="taskPriority" [(ngModel)]="updatedTask.taskPriority">
+      </div>
+      <div class="repeat"><label class="repeat-label" for="repeat">Repeat:</label>
+        <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="updatedTask.repeat">
+
+      </div>
+
+
+
+      <label for="parent">Parent:</label>
       <textarea name="parent" id="parent" name="parent" [(ngModel)]="updatedTask.parent" required></textarea>
-    </mat-form-field>
-  </form>
-</div>
-<div mat-dialog-actions>
-  <button mat-button (click)="saveChanges()">Save</button>
-  <button mat-button (click)="closeDialog()">Cancel</button>
-</div>
+
+    </form>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="saveChanges()">Save</button>
+    <button mat-button (click)="closeDialog()">Cancel</button>
+  </div>

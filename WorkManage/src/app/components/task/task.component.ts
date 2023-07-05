@@ -168,7 +168,8 @@ export class TaskComponent implements OnInit {
 
   editTask(task: Task) {
     const dialogRef = this.dialog.open(EditdialogComponent, {
-      data: task
+      data: task,
+      width: '520px'
     });
   
     dialogRef.afterClosed().subscribe(updatedTask => {
