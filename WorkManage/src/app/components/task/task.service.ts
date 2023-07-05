@@ -35,4 +35,10 @@ export class TaskService {
   
     return this.http.get<Task[]>(`${this.baseUrl}/search`, { params });
   }
+  getImportantTasks() {
+    return this.http.get(`${this.baseUrl}/getImportantTasks`);
+  }
+  getCompletedTasks() {
+    return this.http.get(`${this.baseUrl}/getAllCompletedTasks`);
+  }
 }

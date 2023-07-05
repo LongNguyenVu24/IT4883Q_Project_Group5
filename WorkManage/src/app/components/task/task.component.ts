@@ -1,6 +1,6 @@
 import { catchError } from 'rxjs';
 import { BrowserModule } from '@angular/platform-browser';
-import { Component, Input, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnInit, SimpleChanges, HostListener } from '@angular/core';
 import { MatRadioModule } from '@angular/material/radio';
 import { FormsModule } from '@angular/forms';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -12,7 +12,7 @@ import { DialogModalContentComponent } from '../dialog-modal-content/dialog-moda
 import { CommonModule } from '@angular/common';
 import { MatListModule } from '@angular/material/list';
 import { ChangeDetectorRef } from '@angular/core';
-
+import { EditdialogComponent } from '../editdialog/editdialog.component';
 import { ViewChild, ViewContainerRef, TemplateRef } from '@angular/core';
 import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { TaskSearchService } from './task-search.service';
@@ -29,7 +29,7 @@ export interface Task {
   parent: number;
 }
 
-export interface Gantz  {
+export interface Gantz {
   id: number;
   text: string;
   start_date: Date;
@@ -57,7 +57,7 @@ function calculateDuration(startDate: string, endDate: string): number {
   const start = new Date(startDate);
   const end = new Date(endDate);
   const diffInDays = Math.ceil((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
-  return diffInDays + 1; 
+  return diffInDays + 1;
 }
 
 function calculateProgress(taskStatus: boolean): number {
@@ -73,7 +73,7 @@ function calculateProgress(taskStatus: boolean): number {
   imports: [
     MatCardModule,
     MatCheckboxModule,
-    FormsModule, 
+    FormsModule,
     MatRadioModule,
     MatButtonModule,
     CommonModule,
@@ -82,15 +82,16 @@ function calculateProgress(taskStatus: boolean): number {
   ],
 })
 
-export class TaskComponent implements OnInit{
+export class TaskComponent implements OnInit {
 
+  contextMenuTask: any;
   checked = false;
   imchecked = false;
   moveToCompleted(task: any) {
     task.completed = !task.completed;
   }
   @Input() searchQuery: string = '';
-  
+
   tasks: Task[] = [];
 
   filteredTasks: Task[] = [];
@@ -100,30 +101,42 @@ export class TaskComponent implements OnInit{
     private cdr: ChangeDetectorRef,
     private searchService: TaskSearchService
 
-  ) {}
+  ) { }
 
   ngOnInit(): void {
     this.getAllTasks();
     this.subscribeToSearchQuery();
-   
-  }
+    
 
+  }
+  
   getAllTasks(): void {
     this.taskService.getAllTasks().subscribe(
       (response: any) => {
         this.tasks = response;
-       
+
         this.cdr.detectChanges();
-        
+
       },
       (error) => {
         console.error('Error fetching tasks:', error);
       }
-    ); 
+    );
   }
-  
 
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    this.closeContextMenu();
+  }
 
+  onRightClick(event: MouseEvent, task: any): void {
+    event.preventDefault(); // Prevent the default right-click context menu from appearing
+    this.contextMenuTask = task; // Set the task for which the context menu should be shown
+  }
+
+  closeContextMenu(): void {
+    this.contextMenuTask = null; // Close the context menu by resetting the contextMenuTask
+  }
   subscribeToSearchQuery(): void {
     this.searchService.searchQuery$.subscribe((query) => {
       this.searchQuery = query;
@@ -140,69 +153,64 @@ export class TaskComponent implements OnInit{
       this.filteredTasks = this.tasks;
     }
   }
+
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(DialogModalContentComponent, {
+      width: '520px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.getAllTasks();
+      }
+    });
+  }
+
+  editTask(task: Task) {
+    const dialogRef = this.dialog.open(EditdialogComponent, {
+      data: task
+    });
   
+    dialogRef.afterClosed().subscribe(updatedTask => {
+      if (updatedTask) {
+        const taskUpdateDTO = {
+          taskID: updatedTask.taskID,
+          taskName: updatedTask.taskName,
+          taskDiscription: updatedTask.taskDiscription,
+          startDate: updatedTask.startDate,
+          endDate: updatedTask.endDate,
+          taskPriority: updatedTask.taskPriority,
+          taskStatus: updatedTask.taskStatus,
+          repeat: updatedTask.repeat,
+          parent: updatedTask.parent
+        };
+  
+        this.taskService.updateTask(taskUpdateDTO).subscribe(
+          () => {
+            console.log('Task updated successfully!');
+            this.getAllTasks(); // Fetch updated task list
+          },
+          (error) => {
+            console.error('Error updating task:', error);
+          }
+        );
+      }
+    });
+  }
 
-openDialog(): void {
-  const dialogRef = this.dialog.open(DialogModalContentComponent, {
-    width: '520px'
-  });
-  dialogRef.afterClosed().subscribe(result => {
-    if (result) {
-      this.getAllTasks();
-    }
-  });
-}
-
-editTask(task: Task) {
-  const dialogRef = this.dialog.open(DialogModalContentComponent, {
-    data: task
-  });
-
-  dialogRef.afterClosed().subscribe(updatedTask => {
-    if (updatedTask) {
-      const taskUpdateDTO = {
-        taskId: updatedTask.taskID,
-        taskName: updatedTask.taskName,
-        taskDiscription: updatedTask.taskDiscription,
-        startDate: updatedTask.startDate,
-        endDate: updatedTask.endDate,
-        taskPriority: updatedTask.taskPriority,
-        taskStatus: updatedTask.taskStatus,
-        repeat: updatedTask.repeat,
-        parent: updatedTask.parent
-      };
-
-      this.taskService.updateTask(taskUpdateDTO).subscribe(
-        () => {
-          console.log('Task updated successfully!');
+  deleteTask(taskId: number) {
+    const confirmed = confirm('Are you sure you want to delete this task?');
+    if (confirmed) {
+      this.taskService.deleteTask(taskId).subscribe(
+        (r) => {
+          console.log('Task deleted successfully!');
           this.getAllTasks(); // Fetch updated task list
         },
         (error) => {
-          console.error('Error updating task:', error);
-          
+          console.error('Error deleting task:', error);
+          // Handle error, e.g., show an error message
         }
       );
     }
-  });
-}
-
-deleteTask(taskId: number) {
-  const confirmed = confirm('Are you sure you want to delete this task?');
-  if (confirmed) {
-    this.taskService.deleteTask(taskId).subscribe(
-      (r) => {
-        console.log('Task deleted successfully!');
-        this.getAllTasks(); // Fetch updated task list
-      },
-      (error) => {
-        console.error('Error deleting task:', error);
-        // Handle error, e.g., show an error message
-      }
-    );
   }
-}
-
-
-
-
 }
