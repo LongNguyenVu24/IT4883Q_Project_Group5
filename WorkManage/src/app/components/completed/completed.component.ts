@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatListModule } from '@angular/material/list';
 import { Task } from '../task/task.component';
 import { TaskService } from '../task/task.service';

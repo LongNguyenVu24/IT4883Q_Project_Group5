@@ -6,29 +6,30 @@
     </mat-form-field>
 
     <mat-form-field>
-      <textarea matInput placeholder="Task Description" [(ngModel)]="updatedTask.taskDiscription" name="taskDescription"></textarea>
+      <textarea matInput placeholder="Task Description" [(ngModel)]="updatedTask.taskDiscription"
+        name="taskDescription"></textarea>
     </mat-form-field>
 
     <mat-form-field>
       <label for="startDate">Start Date:</label>
-                    <input type="date" id="startDate" name="startDate" [(ngModel)]="updatedTask.startDate" required>
+      <input type="date" id="startDate" name="startDate" [(ngModel)]="updatedTask.startDate" required>
     </mat-form-field>
 
     <mat-form-field>
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate" name="endDate" [(ngModel)]="updatedTask.endDate" required>
+      <label for="endDate">End Date:</label>
+      <input type="date" id="endDate" name="endDate" [(ngModel)]="updatedTask.endDate" required>
     </mat-form-field>
 
     <label class="priority-label" for="taskPriority">Important:</label>
     <input type="checkbox" id="taskPriority" name="taskPriority" [(ngModel)]="updatedTask.taskPriority">
 
     <label class="repeat-label" for="repeat">Repeat:</label>
-                <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="updatedTask.repeat">
+    <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="updatedTask.repeat">
 
-    
+
 
     <mat-form-field>
-        <textarea name="parent" id="parent" name="parent" [(ngModel)]="updatedTask.parent" required></textarea>
+      <textarea name="parent" id="parent" name="parent" [(ngModel)]="updatedTask.parent" required></textarea>
     </mat-form-field>
   </form>
 </div>
