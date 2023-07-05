@@ -33,6 +33,9 @@ import { DialogModalContentComponent } from './components/dialog-modal-content/d
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { SettingDialogComponent } from './components/setting-dialog/setting-dialog.component';
 import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { EditdialogComponent } from './components/editdialog/editdialog.component';
+
 
 @NgModule({
   declarations: [
@@ -40,7 +43,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     HomepageComponent,
     SidebarComponent,
     TodayComponent,
-    ImportantComponent,
+    //ImportantComponent,
     UpcomingComponent,
     CompletedComponent,
     ListComponent,
@@ -52,6 +55,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     // DialogModalContentComponent,
     LandingviewComponent,
     SettingDialogComponent,
+    EditdialogComponent
   ],
   imports: [
     BrowserModule,
@@ -73,6 +77,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatDialogModule,
     MatCheckboxModule,
     // DialogModalContentComponent
+    MatFormFieldModule
   ],
   providers: [
     {provide:MatDialogRef , useValue:{DialogModalContentComponent} },
