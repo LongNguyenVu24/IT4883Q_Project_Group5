@@ -1,10 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { SettingDialogComponent } from '../setting-dialog/setting-dialog.component';
 import { TaskService } from '../task/task.service';
 import {Task} from '../task/task.component';
 import { TaskSearchService } from '../task/task-search.service';  
-// import { TaskDTO } from '../task/task.component';
+import { TaskComponent } from '../task/task.component';
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
@@ -16,27 +16,10 @@ export class HomepageComponent  {
   endDate: string = '';
   searchQuery: string = '';
   // searchResults: TaskDTO[] = [];
+  @ViewChild(TaskComponent, { static: false }) taskComponent!: TaskComponent;
   constructor(public dialog: MatDialog, private taskService: TaskService) { }
 
 
-  // closeDialog() {
-  //   this.dialog.close();
-  // }
-
-  // searchTasks() {
-  //   if (this.searchQuery) {
-  //     this.taskService.searchTasks(this.searchQuery).subscribe(
-  //       (results: TaskDTO[]) => {
-  //         this.searchResults = results;
-  //       },
-  //       (error) => {
-  //         console.error('Error searching tasks:', error);
-  //       }
-  //     );
-  //   } else {
-  //     this.searchResults = [];
-  //   }
-  // }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(SettingDialogComponent, {
@@ -44,5 +27,18 @@ export class HomepageComponent  {
     });
 }
 
-
+searchTasks(): void {
+  // Call the search API endpoint in your TaskService
+  this.taskService.searchTasks(this.searchQuery).subscribe(
+    (response: Task[]) => {
+      // Pass the search results to the TaskComponent
+      this.taskComponent.filteredTasks = response;
+    },
+    (error) => {
+      console.error('Error searching tasks:', error);
+    }
+  );
 }
+}
+
+

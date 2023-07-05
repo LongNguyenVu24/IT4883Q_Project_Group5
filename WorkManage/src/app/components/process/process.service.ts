@@ -1,7 +1,8 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { Task } from "dhtmlx-gantt";
+
 import { Observable } from "rxjs/internal/Observable";
+import { Task } from "../task/task.component";
 
 @Injectable({
     providedIn: 'root'

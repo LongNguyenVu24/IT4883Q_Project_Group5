@@ -19,10 +19,13 @@
 
             <label for="repeat">Repeat:</label>
             <input type="checkbox" id="repeat" name="repeat" [(ngModel)]="repeat">
-
+            <label for="parent">Parent:</label>
+            <textarea name="parent" id="parent" name="parent" [(ngModel)]="parent" required></textarea>
         </form>
     </div>
     <mat-dialog-actions>
         <button mat-button mat-dialog-close>Cancel</button>
         <button mat-raised-button (click)="saveTask()" [disabled]="!taskForm.valid">Save Task</button>
+       
+
     </mat-dialog-actions>

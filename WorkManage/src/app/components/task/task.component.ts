@@ -25,38 +25,38 @@ export interface Task {
   taskPriority: boolean;
   taskStatus: boolean;
   repeat: boolean;
-  parent: null;
+  parent: number;
 }
 
-interface GanttTask extends Task {
+export interface Gantz  {
   id: number;
   text: string;
   start_date: Date;
   end_date: Date;
   duration: number;
   progress: number;
-  parent: null;
+  parent: number;
 }
 
-// export function mapTaskData(data: Task[]): GanttTask[] {
-//   return data.map((item: Task) => {
-//     return {
-//       id: item.taskID,
-//       text: item.taskName,
-//       start_date: new Date(item.startDate),
-//       end_date: new Date(item.endDate),
-//       duration: calculateDuration(item.startDate, item.endDate),
-//       progress: calculateProgress(item.taskStatus),
-//       parent: item.parent
-//     };
-//   });
-// }
+export function mapTaskData(data: Task[]): Gantz[] {
+  return data.map((item: Task) => {
+    return {
+      id: item.taskID,
+      text: item.taskName,
+      start_date: new Date(item.startDate),
+      end_date: new Date(item.endDate),
+      duration: calculateDuration(item.startDate, item.endDate),
+      progress: calculateProgress(item.taskStatus),
+      parent: item.parent
+    };
+  });
+}
 
 function calculateDuration(startDate: string, endDate: string): number {
   const start = new Date(startDate);
   const end = new Date(endDate);
   const diffInDays = Math.ceil((end.getTime() - start.getTime()) / (1000 * 3600 * 24));
-  return diffInDays + 1; // Adding 1 to include both start and end date
+  return diffInDays + 1; 
 }
 
 function calculateProgress(taskStatus: boolean): number {
@@ -82,14 +82,7 @@ function calculateProgress(taskStatus: boolean): number {
 })
 
 export class TaskComponent implements OnInit{
-  // @ViewChild("outlet", { read: ViewContainerRef })
-  // outletRef!: ViewContainerRef;
-  // @ViewChild("content", { read: TemplateRef })
-  // contentRef!: TemplateRef<any>;
 
-  // ngAfterContentInit() {
-  //   this.outletRef.createEmbeddedView(this.contentRef);
-  // }
   checked = false;
   imchecked = false;
   moveToCompleted(task: any) {
@@ -103,20 +96,14 @@ export class TaskComponent implements OnInit{
   constructor(
     private taskService: TaskService,
     public dialog: MatDialog
-    // private templateRef:    TemplateRef<any>,
-    // private viewContainer:  ViewContainerRef
+
   ) {}
-  // @Input() set rerender(val: any) {
-  //   this.viewContainer.clear();
-  //   this.viewContainer.createEmbeddedView(this.templateRef);
-  // }
+
   ngOnInit(): void {
     this.getAllTasks();
-    // this.saveTask();
+   
   }
-//  ngOnChanges(changes: SimpleChanges): void {
-//   this.saveTask();
-//  }
+
   getAllTasks(): void {
     this.taskService.getAllTasks().subscribe(
       (response: any) => {
@@ -128,14 +115,7 @@ export class TaskComponent implements OnInit{
     ); 
   }
   
-//  async saveTask() {
-//   console.log(1);
-  
-//   let response = this.dialogModalContentComponent.saveTask();
-//   if (response) {
-//     this.getAllTasks()
-//   }
-// }
+
 
 filterTasks(): void {
   if (this.searchQuery) {
@@ -145,6 +125,11 @@ filterTasks(): void {
   } else {
     this.filteredTasks = this.tasks;
   }
+}
+
+clearSearch(): void {
+  this.searchQuery = '';
+  this.filterTasks();
 }
 
 openDialog(): void {
@@ -158,18 +143,54 @@ openDialog(): void {
   });
 }
 
-}
-// searchTasks(taskName?: string, startDate?: string, endDate?: string): Observable<TaskDTO[]> {
-//   let params = new HttpParams();
-//   if (taskName) {
-//     params = params.set('taskName', taskName);
-//   }
-//   if (startDate) {
-//     params = params.set('startDate', startDate);
-//   }
-//   if (endDate) {
-//     params = params.set('endDate', endDate);
-//   }
+// editTask(task: Task) {
+//   const dialogRef = this.dialog.open(DialogModalContentComponent, {
+//     data: task
+//   });
 
-//   return this.http.get<TaskDTO[]>(`${this.apiUrl}/search`, { params });
+//   dialogRef.afterClosed().subscribe(updatedTask => {
+//     if (updatedTask) {
+//       const taskUpdateDTO = {
+//         taskId: updatedTask.taskID,
+//         taskName: updatedTask.taskName,
+//         taskDiscription: updatedTask.taskDiscription,
+//         startDate: updatedTask.startDate,
+//         endDate: updatedTask.endDate,
+//         taskPriority: updatedTask.taskPriority,
+//         taskStatus: updatedTask.taskStatus,
+//         repeat: updatedTask.repeat,
+//         parent: updatedTask.parent
+//       };
+
+//       this.taskService.updateTask(taskUpdateDTO).subscribe(
+//         (taskId: string) => {
+//           console.log('Task updated successfully!');
+//           // Handle the updated task ID if needed
+//         },
+//         (error) => {
+//           console.error('Error updating task:', error);
+//           // Handle error, e.g., show an error message
+//         }
+//       );
+//     }
+//   });
 // }
+
+
+
+// deleteTask(taskId: number) {
+//   const confirmed = confirm('Are you sure you want to delete this task?');
+//   if (confirmed) {
+//     this.taskService.deleteTask(taskId).subscribe(
+//       () => {
+//         console.log('Task deleted successfully!');
+//       },
+//       (error) => {
+//         console.error('Error deleting task:', error);
+//         // Handle error, e.g., show an error message
+//       }
+//     );
+//   }
+// }
+
+}
