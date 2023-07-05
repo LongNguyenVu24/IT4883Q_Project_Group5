@@ -15,3 +15,11 @@ app-task{
         transform: scale(0.95);
     }
 }
+
+.title h3 {
+    color: #6D6363;
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0px;
+}

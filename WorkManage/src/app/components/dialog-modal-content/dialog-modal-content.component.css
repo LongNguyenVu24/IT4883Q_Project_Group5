@@ -3,12 +3,46 @@
     margin: 0 auto;
   }
   
+
   label {
     display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+    margin-bottom: 12px;
+    /* font-weight: bold; */
+
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #132039;
+    letter-spacing: 0.01em;
+    margin-top: 20px;
+
   }
   
+.date-form {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.start,
+.end {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.priority,
+.repeat {
+  display: flex;
+  width: 30%;
+  align-items: center;
+}
+
+.priority-label,
+.repeat-label {
+  min-width: 110px;
+}
+
   input[type="text"],
   textarea,
   input[type="date"],
@@ -19,7 +53,10 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    margin-bottom: 10px;
+    /* margin-bottom: 10px; */
+
+    font-size: 14px;
+    font-family: 'Montserrat', sans-serif;
   }
   
   input[type="checkbox"] {

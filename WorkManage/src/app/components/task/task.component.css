@@ -52,3 +52,8 @@
     }
   }
 
+button .fa-plus {
+  font-size: 30px;
+  color: #374957;
+  margin-right: 20px;
+}

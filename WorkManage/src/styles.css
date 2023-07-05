@@ -35,3 +35,54 @@ body {
     font-family: 'Montserrat', sans-serif;
     font-weight: 500;
 }
+
+/* Pop up when click on avatar */
+
+#mat-menu-panel-0 > div {
+    width: 280px;
+    height: 497px;
+    background: #FFFFFF;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 0px 0px 15px 15px;
+    padding: 32px 42px 42px;
+  }
+
+  #mat-menu-panel-0 > div > button {
+    width: 200px;
+    height: 72px;
+    background: rgba(217, 217, 217, 0.2);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-top: 3px;
+    padding: 24px;
+
+  }
+
+  #mat-menu-panel-0 > div > button > span {
+    color: #132039;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+  }
+
+/* Add task button */
+body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > div > app-today > app-landingview > app-task > button > span.mdc-button__label {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #6D6363;
+}
+
+/* Create Task title */
+#mat-mdc-dialog-title-0 {
+    height: 50px;
+    font-size: 18px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    color: #132039;
+    margin-bottom: 12px;
+    letter-spacing: 0.01em;
+
+}
