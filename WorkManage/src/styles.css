@@ -66,3 +66,11 @@ body {
     font-size: 14px;
     line-height: 20px;
   }
+
+/* Add task button */
+body > app-root > app-homepage > mat-sidenav-container > mat-sidenav-content > div > app-today > app-landingview > app-task > button > span.mdc-button__label {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    color: #6D6363;
+}
