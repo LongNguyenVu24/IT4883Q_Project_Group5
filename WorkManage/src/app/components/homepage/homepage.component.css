@@ -107,4 +107,53 @@ mat-sidenav-content{
   img {
     margin-right: 10px;
   }
+
+
+  /* Noti */
+  span {
+    display: flex;
+    align-items: center;
+  }
+
+  .noti-pop-up .header {
+      height: 43px;
+      width: 100%;
+      padding: 10.5px 42px;
+      display: flex;
+  }
+
+  
+
+  .noti-text {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .noti-text b {
+    font-family: 'Montserrat', sans-serif;
+  }
+  
+  button .fa-ellipsis::before {
+    margin-left: 30px;
+  }
+
+  .noti-text .label {
+    color: #132039;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    height: 15px;
+    font-size: 10px;
+    line-height: 100%;
+  }
+
+  .noti-text .date {
+    color: #264073;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    height: 15px;
+    font-size: 6px;
+    line-height: 100%;
+  }
 /**/
